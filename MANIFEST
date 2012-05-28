@@ -17,7 +17,7 @@ t/000-report-versions-tiny.t
 t/01_test.t
 t/02_firstparent.pm
 t/git_repo_01.tar.gz
-t/tlib/util.pm
+t/tlib/t/util.pm
 xt/author/critic.t
 xt/release/cpan-changes.t
 xt/release/distmeta.t
