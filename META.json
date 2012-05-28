@@ -59,8 +59,7 @@
             "File::pushd" : "0",
             "FindBin" : "0",
             "Package::Stash" : "0",
-            "Test::More" : "0.88",
-            "t::util" : "0"
+            "Test::More" : "0.88"
          }
       }
    },
@@ -123,7 +122,6 @@
          "Test::More" : "0.98",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.07",
-         "t::util" : "NA(possibly not installed)",
          "warnings" : "1.13"
       },
       "perl" : {

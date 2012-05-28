@@ -14,8 +14,7 @@ my %module_build_args = (
     "FindBin" => 0,
     "Module::Build" => "0.3601",
     "Package::Stash" => 0,
-    "Test::More" => "0.88",
-    "t::util" => 0
+    "Test::More" => "0.88"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
