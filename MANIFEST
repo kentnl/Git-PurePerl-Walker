@@ -15,7 +15,7 @@ lib/Git/PurePerl/Walker/Types.pm
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/01_test.t
-t/02_firstparent.pm
+t/02_firstparent.t
 t/git_repo_01.tar.gz
 t/tlib/t/util.pm
 xt/author/critic.t
