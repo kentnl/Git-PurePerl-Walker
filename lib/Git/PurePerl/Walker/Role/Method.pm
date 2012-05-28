@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 package Git::PurePerl::Walker::Role::Method;
 
 # FILENAME: Method.pm
@@ -8,13 +9,11 @@ package Git::PurePerl::Walker::Role::Method;
 
 use Moose::Role;
 with 'Git::PurePerl::Walker::Role::HasRepo';
-requires 'reset';
-requires 'next';
 requires 'current';
 requires 'has_next';
+requires 'next';
 requires 'peek_next';
+requires 'reset';
 
 no Moose::Role;
 1;
-
-
