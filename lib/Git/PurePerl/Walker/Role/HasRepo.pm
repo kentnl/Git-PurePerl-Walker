@@ -5,7 +5,7 @@ BEGIN {
   $Git::PurePerl::Walker::Role::HasRepo::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Role::HasRepo::VERSION = '0.1.0';
+  $Git::PurePerl::Walker::Role::HasRepo::VERSION = '0.001';
 }
 # FILENAME: HasRepo.pm
 # CREATED: 28/05/12 18:20:41 by Kent Fredric (kentnl) <kentfredric@gmail.com>
@@ -36,7 +36,7 @@ Git::PurePerl::Walker::Role::HasRepo - An entity that has a repo
 
 =head1 VERSION
 
-version 0.1.0
+version 0.001
 
 =head1 AUTHOR
 

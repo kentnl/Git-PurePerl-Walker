@@ -24,7 +24,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Git-PurePerl-Walker",
-  "dist_version" => "0.1.0",
+  "dist_version" => "0.001",
   "license" => "perl",
   "module_name" => "Git::PurePerl::Walker",
   "recommends" => {},
@@ -39,7 +39,7 @@ my %module_build_args = (
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,
     "Path::Class" => 0,
-    "perl" => "v5.10.0",
+    "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0
   },
