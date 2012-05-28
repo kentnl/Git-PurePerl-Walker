@@ -1,9 +1,8 @@
 use strict;
 use warnings;
 
-package util;
+package t::util;
 
-# FILENAME: util.pm
 # CREATED: 28/05/12 22:03:22 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Test Library Util
 

@@ -6,7 +6,7 @@ use FindBin;
 use Path::Class qw( dir );
 
 use lib dir($FindBin::Bin)->subdir("tlib")->absolute->stringify;
-use util { '$repo' => 1 };
+use t::util { '$repo' => 1 };
 use Git::PurePerl::Walker::Method::FirstParent;
 
 my $expected = {
@@ -15,7 +15,8 @@ my $expected = {
 };
 
 my $method_factory =
-  Git::PurePerl::Walker::Method::FirstParent->new( start => $repo->ref_sha1('refs/heads/master') );
+  Git::PurePerl::Walker::Method::FirstParent->new(
+    start => $repo->ref_sha1('refs/heads/master') );
 my $method = $method_factory->for_repository($repo);
 
 is( $method->_commit->sha1, $expected->{HEAD}, 'At Head' );

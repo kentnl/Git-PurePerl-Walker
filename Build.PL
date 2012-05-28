@@ -15,7 +15,7 @@ my %module_build_args = (
     "Module::Build" => "0.3601",
     "Package::Stash" => 0,
     "Test::More" => "0.88",
-    "util" => 0
+    "t::util" => 0
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"

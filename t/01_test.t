@@ -6,7 +6,7 @@ use FindBin;
 use Path::Class qw( dir );
 
 use lib dir($FindBin::Bin)->subdir("tlib")->absolute->stringify;
-use util { '$repo' => 1 };
+use t::util { '$repo' => 1 };
 
 # FILENAME: 01_test.t
 # CREATED: 28/05/12 19:23:38 by Kent Fredric (kentnl) <kentfredric@gmail.com>
