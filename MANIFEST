@@ -6,7 +6,6 @@ META.yml
 README
 dist.ini
 lib/Git/PurePerl/Walker.pm
-lib/Git/PurePerl/Walker/Method/Child.pm
 lib/Git/PurePerl/Walker/Method/FirstParent.pm
 lib/Git/PurePerl/Walker/OnCommit/CallBack.pm
 lib/Git/PurePerl/Walker/Role/HasRepo.pm

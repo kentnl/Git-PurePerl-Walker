@@ -68,10 +68,6 @@
          "file" : "lib/Git/PurePerl/Walker.pm",
          "version" : "v0.1.0"
       },
-      "Git::PurePerl::Walker::Method::Child" : {
-         "file" : "lib/Git/PurePerl/Walker/Method/Child.pm",
-         "version" : "v0.1.0"
-      },
       "Git::PurePerl::Walker::Method::FirstParent" : {
          "file" : "lib/Git/PurePerl/Walker/Method/FirstParent.pm",
          "version" : "v0.1.0"
