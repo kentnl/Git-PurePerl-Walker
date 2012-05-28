@@ -1,6 +1,12 @@
 use strict;
 use warnings;
 package Git::PurePerl::Walker;
+BEGIN {
+  $Git::PurePerl::Walker::AUTHORITY = 'cpan:KENTNL';
+}
+{
+  $Git::PurePerl::Walker::VERSION = '0.1.0';
+}
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
@@ -93,12 +99,15 @@ sub reset {
 
 sub step {
 	my $self = shift;
-	my $current_commit = $self->method->current;
-	$self->method->next;
-	$self->on_commit->handle( $current_commit );
+
+	$self->on_commit->handle( $self->method->current );
+
 	if ( not $self->method->has_next ) {
 		return;
 	}
+
+	$self->method->next;
+
 	return 1;
 }
 sub step_all {
@@ -111,3 +120,28 @@ sub step_all {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
+
+=head1 VERSION
+
+version 0.1.0
+
+=head1 AUTHOR
+
+Kent Fredric <kentnl@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
