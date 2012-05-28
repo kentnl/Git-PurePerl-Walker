@@ -1,12 +1,14 @@
 use strict;
 use warnings;
+
 package Git::PurePerl::Walker::Role::OnCommit;
 BEGIN {
   $Git::PurePerl::Walker::Role::OnCommit::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Role::OnCommit::VERSION = '0.001000';
+  $Git::PurePerl::Walker::Role::OnCommit::VERSION = '0.1.0';
 }
+
 # FILENAME: OnCommit.pm
 # CREATED: 28/05/12 16:35:27 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: An event to execute when a commit is encountered
@@ -19,8 +21,6 @@ requires 'handle';
 no Moose::Role;
 1;
 
-
-
 __END__
 =pod
 
@@ -30,7 +30,7 @@ Git::PurePerl::Walker::Role::OnCommit - An event to execute when a commit is enc
 
 =head1 VERSION
 
-version 0.001000
+version 0.1.0
 
 =head1 AUTHOR
 

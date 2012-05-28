@@ -1,11 +1,12 @@
 use strict;
 use warnings;
+
 package Git::PurePerl::Walker::Role::Method;
 BEGIN {
   $Git::PurePerl::Walker::Role::Method::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Role::Method::VERSION = '0.001000';
+  $Git::PurePerl::Walker::Role::Method::VERSION = '0.1.0';
 }
 
 # FILENAME: Method.pm
@@ -14,16 +15,14 @@ BEGIN {
 
 use Moose::Role;
 with 'Git::PurePerl::Walker::Role::HasRepo';
-requires 'reset';
-requires 'next';
 requires 'current';
 requires 'has_next';
+requires 'next';
 requires 'peek_next';
+requires 'reset';
 
 no Moose::Role;
 1;
-
-
 
 __END__
 =pod
@@ -34,7 +33,7 @@ Git::PurePerl::Walker::Role::Method - A method for traversing a git repository
 
 =head1 VERSION
 
-version 0.001000
+version 0.1.0
 
 =head1 AUTHOR
 
