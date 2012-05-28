@@ -17,7 +17,7 @@ use Moose;
 use MooseX::Types::Moose qw( CodeRef );
 with qw( Git::PurePerl::Walker::Role::OnCommit );
 
-as callback => (
+has callback => (
 	handles  => { do_callback => 'execute', },
 	is       => 'rw',
 	isa      => CodeRef,
