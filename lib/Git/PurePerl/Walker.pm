@@ -93,12 +93,15 @@ sub reset {
 
 sub step {
 	my $self = shift;
-	my $current_commit = $self->method->current;
-	$self->method->next;
-	$self->on_commit->handle( $current_commit );
+
+	$self->on_commit->handle( $self->method->current );
+
 	if ( not $self->method->has_next ) {
 		return;
 	}
+
+	$self->method->next;
+
 	return 1;
 }
 sub step_all {

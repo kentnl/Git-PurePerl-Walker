@@ -12,6 +12,7 @@ requires 'reset';
 requires 'next';
 requires 'current';
 requires 'has_next';
+requires 'peek_next';
 
 no Moose::Role;
 1;
