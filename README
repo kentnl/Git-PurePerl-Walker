@@ -130,7 +130,7 @@ PRIVATE METHODS
 PRIVATE ATTRIBUTE GENERATED METHODS
   _method
             # Getter
-            my $methodish = $walker->_method;
+            my $methodish = $walker->_method();
 
   _on_commit
             # Getter

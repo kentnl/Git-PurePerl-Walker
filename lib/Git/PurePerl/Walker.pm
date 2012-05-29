@@ -309,7 +309,7 @@ Returns the number of steps executed.
 =head2 _method
 
 	# Getter
-	my $methodish = $walker->_method;
+	my $methodish = $walker->_method();
 
 =head2 _on_commit
 
