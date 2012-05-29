@@ -176,15 +176,73 @@ version 0.001002
 
 =head2 reset
 
+	$walker->reset();
+
+Reset the walk routine back to the state it was before you walked.
+
 =head2 step
 
+Increments one step forward in the git history, and dispatches the object to the
+OnCommit handlers.
+
+If there are more possible steps to take, it will return a true value.
+
+	while ( $walker->step ) {
+		/* Code to execute if walker has more items */
+	}
+
+This code is almost identical to:
+
+	while(1) {
+		$walker->on_commit->handle( $walker->method->current );
+
+		last if not $walker->method->has_next;
+
+		$walker->method->next;
+
+		/*  Code to execute if walker has more items */
+	}
+
 =head2 step_all
+
+	my $steps = $walker->step_all;
+
+Mostly a convenience method to iterate until it can iterate no more, but without
+you needing to wrap it in a while() block.
+
+Returns the number of steps executed.
 
 =head1 CONSTRUCTOR ARGUMENTS
 
 =head2 repo
 
+B<Mandatory:> An instance of L<< C<Git::PurePerl>|Git::PurePerl >> representing
+the repository to work with.
+
 =head2 method
+
+B<Mandatory:> either a C<Str> describing a Class Name Suffix, or an C<Object>
+that C<does> 
+L<<
+C<Git::PurePerl::B<Walker::Role::Method>>|Git::PurePerl::Walker::Role::Method
+>>.
+
+If its a C<Str>, the C<Str> will be expanded as follows:
+
+	->new(
+		...
+		method => 'Foo',
+		...
+	);
+
+	$className = 'Git::PurePerl::Walker::Method::Foo'
+
+And the resulting class will be loaded, and instantiated for you. ( Assuming of
+course, you don't need to pass any fancy args ).
+
+If you need fancy args, or a class outside the
+C<Git::PurePerl::B<Walker::Method::>> namespace, constructing the object will
+have to be your responsibility.
 
 =head2 on_commit
 
