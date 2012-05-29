@@ -94,7 +94,7 @@ L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnC
 
 =head2 handle
 
-L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle>>|Git::PurePerl::Walker::Role::OnCommit/handle >>
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle( $commit )>>|Git::PurePerl::Walker::Role::OnCommit/handle >>
 
 =head2 reset
 
