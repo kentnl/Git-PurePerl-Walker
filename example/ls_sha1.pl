@@ -56,7 +56,8 @@ my $walker = Git::PurePerl::Walker->new(
 	on_commit => sub {
 		my $commit = shift;
 		my $is_merge = ' ';
-		printf "%s%s %s\n", $is_merge, abbr_sha($commit->sha1), trim($commit->comment);
+		$is_merge = '*' if @{ $commit->parent_sha1s } > 1;
+		printf "%s%s %s", $is_merge, abbr_sha($commit->sha1), trim($commit->comment);
 		print " -> " . join q{, }, map { abbr_sha($_) } @{$commit->parent_sha1s} ;
 		print "\n";
 	},
