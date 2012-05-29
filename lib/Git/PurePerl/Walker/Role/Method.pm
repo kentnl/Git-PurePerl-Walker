@@ -63,7 +63,7 @@ Should return a L<Git::PurePerl::Object::Commit>
 
 	}
 
-Should return true if C<<->next>> will expose a previously unseen object.
+Should return true if C<<-E<gt>next>> will expose a previously unseen object.
 
 =head2 next
 
