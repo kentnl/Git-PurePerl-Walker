@@ -32,10 +32,10 @@ sub current {
 sub has_next {
 	my ( $self ) = @_;
 	if ( not $self->_commit ) {
-		return undef;
+		return;
 	}
 	if ( not $self->_commit->parent ) {
-		return undef;
+		return;
 	}
 	return 1;
 }
