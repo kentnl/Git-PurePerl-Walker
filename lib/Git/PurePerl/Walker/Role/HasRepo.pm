@@ -103,7 +103,7 @@ L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
 
 =head1 PRIVATE ATTRIBUTE GENERATED METHODS
 
-=head2 _repo 
+=head2 _repo
 
 =head1 CONSUMED ROLES
 

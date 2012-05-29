@@ -40,6 +40,7 @@ my %module_build_args = (
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,
     "Path::Class" => 0,
+    "namespace::autoclean" => 0,
     "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0

@@ -46,6 +46,7 @@
             "MooseX::Types" : "0",
             "MooseX::Types::Moose" : "0",
             "Path::Class" : "0",
+            "namespace::autoclean" : "0",
             "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
@@ -122,6 +123,7 @@
          "Path::Class" : "0.25",
          "Scalar::Util" : "1.25",
          "Test::More" : "0.98",
+         "namespace::autoclean" : "0.13",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.07",
          "warnings" : "1.13"

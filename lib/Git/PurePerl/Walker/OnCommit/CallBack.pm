@@ -15,7 +15,14 @@ BEGIN {
 
 use Moose;
 use MooseX::Types::Moose qw( CodeRef );
+use namespace::autoclean;
+
+
 with qw( Git::PurePerl::Walker::Role::OnCommit );
+
+
+
+
 
 has callback => (
 	handles  => { do_callback => 'execute', },
@@ -25,11 +32,13 @@ has callback => (
 	traits   => [ qw( Code ) ],
 );
 
+
 sub handle {
 	my ( $self, $commit ) = @_;
 	$self->do_callback( $commit );
 	return $self;
 }
+
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
@@ -53,6 +62,46 @@ Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
 =head1 VERSION
 
 version 0.001000
+
+=head1 ATTRIBUTES
+
+=head2 callback
+
+=head1 ATTRIBUTE GENERATED METHODS
+
+=head2 callback
+
+=head2 do_callback
+
+=head1 INHERITED METHODS
+
+=head2 for_repository
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+
+=head2 clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=head2 _repo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
+
+=head1 CONSUMED ROLES
+
+=head2 Git::PurePerl::Walker::Role::OnCommit
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit >>
+
+=head1 ROLE SATISFYING METHODS
+
+=head2 handle
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle( $commit )>>|Git::PurePerl::Walker::Role::OnCommit/handle >>
+
+=head2 reset
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset()>>|Git::PurePerl::Walker::Role::OnCommit/reset >>
 
 =head1 AUTHOR
 

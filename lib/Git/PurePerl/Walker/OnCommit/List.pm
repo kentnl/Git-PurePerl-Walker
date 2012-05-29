@@ -16,9 +16,13 @@ BEGIN {
 use Moose;
 use MooseX::Types::Moose qw( ArrayRef );
 use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
+use namespace::autoclean;
 
 
 with qw( Git::PurePerl::Walker::Role::OnCommit );
+
+
+
 
 
 has 'events' => (
@@ -94,6 +98,20 @@ version 0.001000
 =head2 all_events
 
 =head2 add_event
+
+=head1 INHERITED METHODS
+
+=head2 for_repository
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+
+=head2 clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=head2 _repo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
 
 =head1 CONSUMED ROLES
 
