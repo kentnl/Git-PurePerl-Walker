@@ -35,7 +35,6 @@ L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PureP
 
 =cut
 
-
 =rolerequires current
 
 	my $commit = $object->current;

@@ -10,6 +10,7 @@ package Git::PurePerl::Walker::OnCommit::List;
 use Moose;
 use MooseX::Types::Moose qw( ArrayRef );
 use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
+use namespace::autoclean;
 
 =consumerole Git::PurePerl::Walker::Role::OnCommit
 
@@ -18,6 +19,24 @@ L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnC
 =cut
 
 with qw( Git::PurePerl::Walker::Role::OnCommit );
+
+=imethod for_repository
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+
+=cut
+
+=imethod clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=cut
+
+=imethod _repo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
+
+=cut
 
 =attr events
 
