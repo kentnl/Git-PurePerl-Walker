@@ -29,7 +29,7 @@ method which sets the repo property.
 =cut
 
 use Moose::Role;
-use Git::PurePerl::Walker::Types qw( GPPW_Repo );
+use Git::PurePerl::Walker::Types qw( GPPW_Repository );
 
 =consumerole MooseX::Clone
 
@@ -49,7 +49,7 @@ with qw( MooseX::Clone );
 
 =cut
 
-has '_repo' => ( isa => GPPW_Repo, is => 'rw', weak_ref => 1 );
+has '_repo' => ( isa => GPPW_Repository, is => 'rw', weak_ref => 1 );
 
 =method for_repository
 

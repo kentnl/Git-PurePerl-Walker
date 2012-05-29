@@ -11,7 +11,7 @@ use Moose::Role;
 
 =consumerole Git::PurePerl::Walker::Role::HasRepo
 
-L<Git::PurePerl::Walker::Role::HasRepo>
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>>|Git::PurePerl::Walker::Role::HasRepo >>
 
 =cut
 
@@ -21,7 +21,7 @@ with 'Git::PurePerl::Walker::Role::HasRepo';
 
 	my $commit = $object->current;
 
-Should return a L<Git::PurePerl::Object::Commit>
+Should return a L<< C<Git::PurePerl::B<Object::Commit>>|Git::PurePerl::Object::Commmit >>
 
 =cut
 
