@@ -50,12 +50,24 @@ CONSTRUCTOR ARGUMENTS
     "Git::PurePerl::Walker::Method::" namespace, constructing the object
     will have to be your responsibility.
 
+            ->new(
+                    ...
+                    method => Foo::Class->new(),
+                    ...
+            )
+
   on_commit
     Mandatory: either a "Str" that can be expanded in a way similar to that
     by "*method*", a "CodeRef", or an object that "does"
     "Git::PurePerl::Walker::Role::OnCommit".
 
     If passed a "Str" it will be expanded like so:
+
+            ->new(
+                    ...
+                    on_commit => $str,
+                    ...
+            );
 
             $class = 'Git::PurePerl::Walker::OnCommit::' . $str;
 
@@ -64,8 +76,23 @@ CONSTRUCTOR ARGUMENTS
     If passed a "CodeRef", "Git::PurePerl::Walker::OnCommit::CallBack" will
     be loaded and your "CodeRef" will be passed as an argument.
 
+            ->new(
+                    ...
+                    on_commit => sub {
+                            my ( $commit ) = @_;
+
+                    },
+                    ...
+            );
+
     If you need anything fancier, or requiring an unusual namespace, you'll
     want to construct the object yourself.
+
+            ->new(
+                    ...
+                    on_commit => Foo::Package->new()
+                    ...
+            );
 
 METHODS
   reset

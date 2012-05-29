@@ -204,6 +204,12 @@ If you need fancy args, or a class outside the
 C<Git::PurePerl::B<Walker::Method::>> namespace, constructing the object will
 have to be your responsibility.
 
+	->new(
+		...
+		method => Foo::Class->new(),
+		...
+	)
+
 =head2 on_commit
 
 B<Mandatory:> either a C<Str> that can be expanded in a way similar to that by
@@ -212,6 +218,12 @@ C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommi
 >>.
 
 If passed a C<Str> it will be expanded like so:
+
+	->new(
+		...
+		on_commit => $str,
+		...
+	);
 
 	$class = 'Git::PurePerl::Walker::OnCommit::' . $str;
 
@@ -222,8 +234,23 @@ L<<
 C<Git::PurePerl::B<Walker::OnCommit::CallBack>>|Git::PurePerl::Walker::OnCommit::CallBack
 >> will be loaded and your C<CodeRef> will be passed as an argument. 
 
+	->new(
+		...
+		on_commit => sub {
+			my ( $commit ) = @_;
+
+		},
+		...
+	);
+
 If you need anything fancier, or requiring an unusual namespace, you'll want to
 construct the object yourself. 
+
+	->new(
+		...
+		on_commit => Foo::Package->new()
+		...
+	);
 
 =head1 METHODS
 
