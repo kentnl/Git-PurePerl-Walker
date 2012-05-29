@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::VERSION = '0.001001';
+  $Git::PurePerl::Walker::VERSION = '0.001002';
 }
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
@@ -150,7 +150,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
@@ -173,8 +173,6 @@ version 0.001001
 	$walker->step_all;
 
 =head1 METHODS
-
-=head2 BUILD
 
 =head2 reset
 
@@ -225,6 +223,15 @@ version 0.001001
 =head2 _method
 
 =head2 _on_commit
+
+=begin Pod::Coverage
+
+
+
+
+=end Pod::Coverage
+
+	BUILD
 
 =head1 AUTHOR
 

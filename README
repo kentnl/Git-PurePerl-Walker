@@ -3,7 +3,7 @@ NAME
     Git::PurePerl repo
 
 VERSION
-    version 0.001001
+    version 0.001002
 
 SYNOPSIS
             use Git::PurePerl::Walker;
@@ -25,7 +25,6 @@ SYNOPSIS
             $walker->step_all;
 
 METHODS
-  BUILD
   reset
   step
   step_all
@@ -51,6 +50,8 @@ PRIVATE METHODS
 PRIVATE ATTRIBUTE GENERATED METHODS
   _method
   _on_commit
+            BUILD
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 

@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::Method::FirstParent::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Method::FirstParent::VERSION = '0.001001';
+  $Git::PurePerl::Walker::Method::FirstParent::VERSION = '0.001002';
 }
 
 # FILENAME: FirstParent.pm
@@ -89,7 +89,7 @@ Git::PurePerl::Walker::Method::FirstParent - Walk down a tree following the firs
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 CONSTRUCTOR ARGUMENTS
 
