@@ -59,6 +59,9 @@ requires:
   perl: 5.006
   strict: 0
   warnings: 0
+resources:
+  homepage: https://github.com/kentfredric/Git-PurePerl-Walker
+  repository: https://github.com/kentfredric/Git-PurePerl-Walker.git
 version: 0.001000
 x_BuiltWith:
   modules:

@@ -99,6 +99,14 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "homepage" : "https://github.com/kentfredric/Git-PurePerl-Walker",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Git-PurePerl-Walker.git",
+         "web" : "https://github.com/kentfredric/Git-PurePerl-Walker"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {

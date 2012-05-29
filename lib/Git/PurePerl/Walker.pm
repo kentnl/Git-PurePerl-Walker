@@ -25,6 +25,7 @@ has repo => (
 	lazy_build => 1,
 );
 
+
 has _method => (
 	init_arg => 'method',
 	is       => 'ro',
