@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::Role::OnCommit::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Role::OnCommit::VERSION = '0.1.0';
+  $Git::PurePerl::Walker::Role::OnCommit::VERSION = '0.001000';
 }
 
 # FILENAME: OnCommit.pm
@@ -32,7 +32,7 @@ Git::PurePerl::Walker::Role::OnCommit - An event to execute when a commit is enc
 
 =head1 VERSION
 
-version 0.1.0
+version 0.001000
 
 =head1 AUTHOR
 

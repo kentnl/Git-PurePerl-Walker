@@ -3,7 +3,7 @@ NAME
     Git::PurePerl repo
 
 VERSION
-    version 0.1.0
+    version 0.001000
 
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
