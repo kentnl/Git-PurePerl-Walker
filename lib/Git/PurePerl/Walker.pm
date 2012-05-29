@@ -231,7 +231,7 @@ version 0.001002
 
 =end Pod::Coverage
 
-	BUILD
+BUILD
 
 =head1 AUTHOR
 
