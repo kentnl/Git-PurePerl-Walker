@@ -12,7 +12,7 @@ package Git::PurePerl::Walker::Role::HasRepo;
 This is a composition role consumed by other roles to provide them with a
 private repo property.
 
-This role also folds in L<MooseX::Clone> and provides the 'for_repository'
+This role also folds in L<< C<MooseX::B<Clone>>|MooseX::Clone >> and provides the 'for_repository'
 method which sets the repo property.
 
 	package Foo {
@@ -23,7 +23,7 @@ method which sets the repo property.
 
 	my $factory = Foo->new( %args );
 
-	my $instance = $factory->for_repo( $Git_PurePerl_Repo );
+	my $instance = $factory->for_repository( $Git_PurePerl_Repo );
 
 
 =cut
@@ -32,6 +32,8 @@ use Moose::Role;
 use Git::PurePerl::Walker::Types qw( GPPW_Repo );
 
 =consumerole MooseX::Clone
+
+L<< C<MooseX::B<Clone>>|MooseX::Clone >>
 
 =cut
 
@@ -53,7 +55,7 @@ has '_repo' => ( isa => GPPW_Repo, is => 'rw', weak_ref => 1 );
 
 Construct an entity for a given repository. 
 
-This internally calls L<MooseX::Clone> on the current object, passing the _repo
+This internally calls L<< C<MooseX::B<Clone>>|MooseX::Clone >> on the current object, passing the _repo
 field to its constructor, producing a seperate, disconnected object to work
 with.
 
