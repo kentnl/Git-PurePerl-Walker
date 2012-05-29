@@ -17,6 +17,7 @@ use Moose;
 use MooseX::Types::Moose qw( ArrayRef );
 use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
 
+
 with qw( Git::PurePerl::Walker::Role::OnCommit );
 
 has 'events' => (
@@ -30,6 +31,7 @@ has 'events' => (
 	default => sub { [] },
 );
 
+
 sub handle {
 	my ( $self, $commit ) = @_;
 	for my $child ( $self->all_events ) {
@@ -37,6 +39,7 @@ sub handle {
 	}
 	return $self;
 }
+
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
@@ -80,6 +83,20 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 =head1 VERSION
 
 version 0.001000
+
+=head1 ROLE SATISFYING METHODS
+
+=head2 handle
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle>>|Git::PurePerl::Walker::Role::OnCommit/handle >>
+
+=head2 reset
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset>>|Git::PurePerl::Walker::Role::OnCommit/reset >>
+
+=consumesrole Git::PurePerl::Walker::Role::OnCommit
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit >>
 
 =head1 AUTHOR
 
