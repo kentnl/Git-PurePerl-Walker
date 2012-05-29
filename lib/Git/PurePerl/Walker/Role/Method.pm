@@ -14,11 +14,23 @@ BEGIN {
 # ABSTRACT: A method for traversing a git repository
 
 use Moose::Role;
+
+
 with 'Git::PurePerl::Walker::Role::HasRepo';
+
+
 requires 'current';
+
+
 requires 'has_next';
+
+
 requires 'next';
+
+
 requires 'peek_next';
+
+
 requires 'reset';
 
 no Moose::Role;
@@ -36,6 +48,22 @@ Git::PurePerl::Walker::Role::Method - A method for traversing a git repository
 =head1 VERSION
 
 version 0.001000
+
+=head1 REQUIRES METHODS
+
+=head2 current
+
+=head2 has_next
+
+=head2 next
+
+=head2 peek_next
+
+=head2 reset
+
+=head1 CONSUMED ROLES
+
+=head2 Git::PurePler::Walker::Role::HasRepo
 
 =head1 AUTHOR
 
