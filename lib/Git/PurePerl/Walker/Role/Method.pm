@@ -22,7 +22,6 @@ with 'Git::PurePerl::Walker::Role::HasRepo';
 
 
 
-
 requires 'current';
 
 

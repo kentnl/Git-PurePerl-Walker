@@ -63,6 +63,10 @@ Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
 
 version 0.001000
 
+=head1 CONSTRUCTOR ARGUMENTS
+
+=head2 callback
+
 =head1 ATTRIBUTES
 
 =head2 callback

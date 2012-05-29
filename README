@@ -5,6 +5,32 @@ NAME
 VERSION
     version 0.001000
 
+METHODS
+  reset
+  step
+  step_all
+CONSTRUCTOR ARGUMENTS
+  repo
+  method
+  on_commit
+ATTRIBUTES
+  repo
+  method
+  on_commit
+ATTRIBUTE GENERATED METHODS
+  repo
+  method
+  on_commit
+PRIVATE ATTRIBUTES
+  _method
+  _on_commit
+PRIVATE METHODS
+  _build_repo
+  _build_method
+  _build_on_commit
+PRIVATE ATTRIBUTE GENERATED METHODS
+  _method
+  _on_commit
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 

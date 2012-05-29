@@ -91,6 +91,10 @@ Git::PurePerl::Walker::Method::FirstParent - Walk down a tree following the firs
 
 version 0.001000
 
+=head1 CONSTRUCTOR ARGUMENTS
+
+=head2 start
+
 =head1 ATTRIBUTES
 
 =head2 start
@@ -112,6 +116,10 @@ L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
 =head2 _repo
 
 L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
+
+=head1 PRIVATE CONSTRUCTOR ARGUMENTS
+
+=head2 _commit
 
 =head1 PRIVATE ATTRIBUTES
 

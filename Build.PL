@@ -35,7 +35,6 @@ my %module_build_args = (
     "Git::PurePerl" => 0,
     "Moose" => 0,
     "Moose::Role" => 0,
-    "Moose::Util::TypeConstraints" => 0,
     "MooseX::Clone" => 0,
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,

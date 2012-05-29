@@ -15,7 +15,8 @@ use Moose;
 use Path::Class qw( dir );
 use Class::Load qw( );
 use Git::PurePerl::Walker::Types qw( :all );
-require Moose::Util::TypeConstraints;
+use namespace::autoclean;
+
 
 has repo => (
 	isa        => GPPW_Repository,
@@ -29,6 +30,8 @@ has _method => (
 	isa      => GPPW_Methodish,
 	required => 1,
 );
+
+
 has 'method' => (
 	init_arg   => undef,
 	is         => 'ro',
@@ -36,12 +39,15 @@ has 'method' => (
 	lazy_build => 1,
 );
 
+
 has '_on_commit' => (
 	init_arg => 'on_commit',
 	required => 1,
 	is       => 'ro',
 	isa      => GPPW_OnCommitish,
 );
+
+
 has 'on_commit' => (
 	init_arg   => undef,
 	isa        => GPPW_OnCommit,
@@ -55,11 +61,13 @@ sub BUILD {
 	return $self;
 }
 
+
 sub _build_repo {
 	my ( $self ) = shift;
 	require Git::PurePerl;
 	return Git::PurePerl->new( directory => dir( q[.] )->absolute->stringify );
 }
+
 
 sub _build_method {
 	my ( $self )   = shift;
@@ -72,6 +80,7 @@ sub _build_method {
 	}
 	return $method->for_repository( $self->repo );
 }
+
 
 sub _build_on_commit {
 	my ( $self )      = shift;
@@ -91,6 +100,7 @@ sub _build_on_commit {
 	return $on_commit->for_repository( $self->repo );
 }
 
+
 ## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub reset {
 	my $self = shift;
@@ -98,6 +108,7 @@ sub reset {
 	$self->on_commit->reset;
 	return $self;
 }
+
 
 sub step {
 	my $self = shift;
@@ -112,6 +123,7 @@ sub step {
 
 	return 1;
 }
+
 
 sub step_all {
 	my $self  = shift;
@@ -136,6 +148,58 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 =head1 VERSION
 
 version 0.001000
+
+=head1 METHODS
+
+=head2 reset
+
+=head2 step
+
+=head2 step_all
+
+=head1 CONSTRUCTOR ARGUMENTS
+
+=head2 repo
+
+=head2 method
+
+=head2 on_commit
+
+=head1 ATTRIBUTES
+
+=head2 repo
+
+=head2 method
+
+=head2 on_commit
+
+=head1 ATTRIBUTE GENERATED METHODS
+
+=head2 repo
+
+=head2 method
+
+=head2 on_commit
+
+=head1 PRIVATE ATTRIBUTES
+
+=head2 _method
+
+=head2 _on_commit
+
+=head1 PRIVATE METHODS
+
+=head2 _build_repo
+
+=head2 _build_method
+
+=head2 _build_on_commit
+
+=head1 PRIVATE ATTRIBUTE GENERATED METHODS
+
+=head2 _method
+
+=head2 _on_commit
 
 =head1 AUTHOR
 
