@@ -27,6 +27,8 @@ no Moose::Role;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Git::PurePerl::Walker::Role::Method - A method for traversing a git repository

@@ -24,6 +24,8 @@ no Moose::Role;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Git::PurePerl::Walker::Role::OnCommit - An event to execute when a commit is encountered

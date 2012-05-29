@@ -30,6 +30,8 @@ no Moose::Role;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Git::PurePerl::Walker::Role::HasRepo - An entity that has a repo

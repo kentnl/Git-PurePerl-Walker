@@ -125,6 +125,8 @@ sub step_all {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo

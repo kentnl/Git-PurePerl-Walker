@@ -35,6 +35,8 @@ union GPPW_OnCommitish, [ Str, CodeRef, GPPW_OnCommit ];
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Git::PurePerl::Walker::Types - Misc utility types for Git::PurePerl::Walker

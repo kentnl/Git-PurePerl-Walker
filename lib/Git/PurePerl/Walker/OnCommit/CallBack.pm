@@ -42,6 +42,8 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
