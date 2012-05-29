@@ -52,12 +52,13 @@ has 'on_commit' => (
 sub BUILD {
 	my ( $self, $args ) = @_;
 	$self->reset;
+	return $self;
 }
 
 sub _build_repo {
 	my ( $self ) = shift;
 	require Git::PurePerl;
-	return Git::PurePerl->new( directory => dir( '.' )->absolute->stringify );
+	return Git::PurePerl->new( directory => dir( q[.] )->absolute->stringify );
 }
 
 sub _build_method {
@@ -90,6 +91,7 @@ sub _build_on_commit {
 	return $on_commit->for_repository( $self->repo );
 }
 
+## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub reset {
 	my $self = shift;
 	$self->method->reset;
