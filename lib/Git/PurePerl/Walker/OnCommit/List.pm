@@ -20,6 +20,7 @@ use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
 
 with qw( Git::PurePerl::Walker::Role::OnCommit );
 
+
 has 'events' => (
 	isa => ArrayRef [ GPPW_OnCommit ],
 	is => 'rw',
@@ -84,6 +85,16 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 version 0.001000
 
+=head1 METHODS
+
+=head2 all_events
+
+=head2 add_event
+
+=head1 ATTRIBUTES
+
+=head2 events
+
 =head1 CONSUMED ROLES
 
 =head2 Git::PurePerl::Walker::Role::OnCommit
@@ -98,7 +109,7 @@ L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle( $commit )>>|Git::P
 
 =head2 reset
 
-L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset>>|Git::PurePerl::Walker::Role::OnCommit/reset >>
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset()>>|Git::PurePerl::Walker::Role::OnCommit/reset >>
 
 =head1 AUTHOR
 
