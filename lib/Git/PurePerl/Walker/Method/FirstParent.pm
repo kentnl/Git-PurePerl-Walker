@@ -53,11 +53,13 @@ sub peek_next {
 	return $commit;
 }
 
+## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
 	my ( $self ) = @_;
 	$self->_commit( $self->_repo->get_object( $self->start ) );
 	return $self;
 }
+## use critic
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
