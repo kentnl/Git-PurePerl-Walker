@@ -17,6 +17,25 @@ L<< C<Git::PurePerl::B<Walker::Role::HasRepo>>|Git::PurePerl::Walker::Role::HasR
 
 with 'Git::PurePerl::Walker::Role::HasRepo';
 
+=imethod for_repository
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+
+=cut
+
+=imethod clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=cut
+
+=imethod _repo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
+
+=cut
+
+
 =rolerequires current
 
 	my $commit = $object->current;

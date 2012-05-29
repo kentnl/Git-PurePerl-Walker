@@ -37,15 +37,19 @@ L<< C<MooseX::B<Clone>>|MooseX::Clone >>
 
 =cut
 
+=imethod clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=cut
+
 with qw( MooseX::Clone );
 
 =p_attr _repo
 
 =cut
 
-=p_method _repo 
-
-
+=p_attrmethod _repo
 
 =cut
 

@@ -11,7 +11,21 @@ use Moose;
 use MooseX::Types::Moose qw( ArrayRef );
 use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
 
+=consumerole Git::PurePerl::Walker::Role::OnCommit
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit >>
+
+=cut
+
 with qw( Git::PurePerl::Walker::Role::OnCommit );
+
+=attr events
+
+=attrmethod all_events
+
+=attrmethod add_event
+
+=cut
 
 has 'events' => (
 	isa => ArrayRef [ GPPW_OnCommit ],
@@ -24,6 +38,12 @@ has 'events' => (
 	default => sub { [] },
 );
 
+=rolemethod handle
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle( $commit )>>|Git::PurePerl::Walker::Role::OnCommit/handle >>
+
+=cut
+
 sub handle {
 	my ( $self, $commit ) = @_;
 	for my $child ( $self->all_events ) {
@@ -31,6 +51,12 @@ sub handle {
 	}
 	return $self;
 }
+
+=rolemethod reset
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset()>>|Git::PurePerl::Walker::Role::OnCommit/reset >>
+
+=cut
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
