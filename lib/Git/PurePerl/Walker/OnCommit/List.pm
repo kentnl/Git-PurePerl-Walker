@@ -85,7 +85,7 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 version 0.001000
 
-=head1 METHODS
+=head1 ATTRIBUTE GENERATED METHODS
 
 =head2 all_events
 
