@@ -63,7 +63,7 @@ method which sets the repo property.
 
 	my $factory = Foo->new( %args );
 
-	my $instance = $factory->for_repo( $Git_PurePerl_Repo );
+	my $instance = $factory->for_repository( $Git_PurePerl_Repo );
 
 =head1 METHODS
 
