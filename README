@@ -109,8 +109,17 @@ ATTRIBUTES
   on_commit
 ATTRIBUTE GENERATED METHODS
   repo
+            # Getter
+            my $repo = $walker->repo();
+
   method
+            # Getter
+            my $method_object = $walker->method();
+
   on_commit
+            # Getter
+            my $on_commit_object = $walker->on_commit();
+
 PRIVATE ATTRIBUTES
   _method
   _on_commit
@@ -120,7 +129,13 @@ PRIVATE METHODS
   _build_on_commit
 PRIVATE ATTRIBUTE GENERATED METHODS
   _method
+            # Getter
+            my $methodish = $walker->_method;
+
   _on_commit
+            # Getter
+            my $on_commitish => $walker->_on_commit();
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 

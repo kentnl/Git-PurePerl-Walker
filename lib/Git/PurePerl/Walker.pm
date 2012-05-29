@@ -21,7 +21,7 @@ use namespace::autoclean;
 
 has repo => (
 	isa        => GPPW_Repository,
-	is         => 'rw',
+	is         => 'ro',
 	lazy_build => 1,
 );
 
@@ -277,9 +277,18 @@ Returns the number of steps executed.
 
 =head2 repo
 
+	# Getter
+	my $repo = $walker->repo();
+
 =head2 method
 
+	# Getter
+	my $method_object = $walker->method();
+
 =head2 on_commit
+
+	# Getter
+	my $on_commit_object = $walker->on_commit();
 
 =head1 PRIVATE ATTRIBUTES
 
@@ -299,7 +308,13 @@ Returns the number of steps executed.
 
 =head2 _method
 
+	# Getter
+	my $methodish = $walker->_method;
+
 =head2 _on_commit
+
+	# Getter
+	my $on_commitish => $walker->_on_commit();
 
 =for Pod::Coverage BUILD
 
