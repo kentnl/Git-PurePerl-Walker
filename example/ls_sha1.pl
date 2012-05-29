@@ -41,6 +41,10 @@ sub trim {
 	$comment =~ s/\s+/ /g;
 	return $comment;
 }
+sub abbr_sha {
+	my $sha = shift;
+	return substr $sha, 0, 5;
+}
 my $repo = Git::PurePerl->new( 
 	gitdir => find_git_dir( $cwd ),
 );
@@ -52,10 +56,9 @@ my $walker = Git::PurePerl::Walker->new(
 	on_commit => sub {
 		my $commit = shift;
 		my $is_merge = ' ';
-		if( $commit->parents > 1 ) {
-			$is_merge = '*';
-		}
-		printf "%s%s %s\n", $is_merge, $commit->sha1, trim($commit->comment);
+		printf "%s%s %s\n", $is_merge, abbr_sha($commit->sha1), trim($commit->comment);
+		print " -> " . join q{, }, map { abbr_sha($_) } @{$commit->parent_sha1s} ;
+		print "\n";
 	},
 );
 
