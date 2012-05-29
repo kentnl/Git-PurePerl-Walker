@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::Role::HasRepo::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Role::HasRepo::VERSION = '0.001000';
+  $Git::PurePerl::Walker::Role::HasRepo::VERSION = '0.001001';
 }
 
 # FILENAME: HasRepo.pm
@@ -46,7 +46,7 @@ Git::PurePerl::Walker::Role::HasRepo - An entity that has a repo
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 DESCRIPTION
 

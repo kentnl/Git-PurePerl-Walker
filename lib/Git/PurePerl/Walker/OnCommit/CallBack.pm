@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::OnCommit::CallBack::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::OnCommit::CallBack::VERSION = '0.001000';
+  $Git::PurePerl::Walker::OnCommit::CallBack::VERSION = '0.001001';
 }
 
 # FILENAME: CallBack.pm
@@ -61,7 +61,7 @@ Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 CONSTRUCTOR ARGUMENTS
 

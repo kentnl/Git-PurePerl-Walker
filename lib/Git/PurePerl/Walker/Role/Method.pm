@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::Role::Method::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Role::Method::VERSION = '0.001000';
+  $Git::PurePerl::Walker::Role::Method::VERSION = '0.001001';
 }
 
 # FILENAME: Method.pm
@@ -50,7 +50,7 @@ Git::PurePerl::Walker::Role::Method - A method for traversing a git repository
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 REQUIRES METHODS
 

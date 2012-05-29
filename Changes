@@ -1,5 +1,11 @@
 Release history for Git-PurePerl-Walker
 
+0.001001 2012-05-29T05:23:43Z
+ - Added an example utility in example/ which demonstrates using the tool
+   for a simplistic drop-in replacement for "git log", except with far more
+   fine-tuned power awesomeness, and custom colour formatting and string
+   filtery magic. 
+
 0.001000 2012-05-29T04:26:00Z
  - First version.
 
