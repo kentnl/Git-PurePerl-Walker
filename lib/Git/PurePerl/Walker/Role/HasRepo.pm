@@ -95,7 +95,7 @@ And now all C<@foos> can be mangled independently.
 
 =head2 clone
 
-L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params>>
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
 
 =head1 PRIVATE ATTRIBUTES
 

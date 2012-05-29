@@ -19,6 +19,10 @@ use Moose::Role;
 with 'Git::PurePerl::Walker::Role::HasRepo';
 
 
+
+
+
+
 requires 'current';
 
 
@@ -83,6 +87,20 @@ The same as L</next> except internal position should not change.
 
 Should reset the internal position to some position so that calling
 C<< $object->current >> returns the first result again.
+
+=head1 INHERITED METHODS
+
+=head2 for_repository
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+
+=head2 clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=head2 _repo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
 
 =head1 CONSUMED ROLES
 
