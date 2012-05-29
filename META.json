@@ -59,6 +59,7 @@
             "File::pushd" : "0",
             "FindBin" : "0",
             "Package::Stash" : "0",
+            "Scalar::Util" : "0",
             "Test::More" : "0.88"
          }
       }
@@ -74,6 +75,10 @@
       },
       "Git::PurePerl::Walker::OnCommit::CallBack" : {
          "file" : "lib/Git/PurePerl/Walker/OnCommit/CallBack.pm",
+         "version" : "0.001000"
+      },
+      "Git::PurePerl::Walker::OnCommit::List" : {
+         "file" : "lib/Git/PurePerl/Walker/OnCommit/List.pm",
          "version" : "0.001000"
       },
       "Git::PurePerl::Walker::Role::HasRepo" : {
@@ -115,6 +120,7 @@
          "MooseX::Types::Moose" : "0.35",
          "Package::Stash" : "0.33",
          "Path::Class" : "0.25",
+         "Scalar::Util" : "1.25",
          "Test::More" : "0.98",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.07",

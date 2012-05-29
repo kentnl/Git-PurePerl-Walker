@@ -10,6 +10,7 @@ dist.ini
 lib/Git/PurePerl/Walker.pm
 lib/Git/PurePerl/Walker/Method/FirstParent.pm
 lib/Git/PurePerl/Walker/OnCommit/CallBack.pm
+lib/Git/PurePerl/Walker/OnCommit/List.pm
 lib/Git/PurePerl/Walker/Role/HasRepo.pm
 lib/Git/PurePerl/Walker/Role/Method.pm
 lib/Git/PurePerl/Walker/Role/OnCommit.pm
@@ -20,6 +21,7 @@ t/000-report-versions-tiny.t
 t/01_test.t
 t/02_firstparent.t
 t/03_callback.t
+t/04_list.t
 t/git_repo_01.tar.gz
 t/tlib/t/util.pm
 weaver.ini
