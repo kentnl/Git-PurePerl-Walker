@@ -35,6 +35,10 @@ L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PureP
 
 =cut
 
+=carg start
+
+=pcarg _commit
+
 =p_attr _commit
 
 =p_attrmethod _commit

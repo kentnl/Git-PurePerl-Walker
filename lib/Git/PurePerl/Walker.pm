@@ -9,7 +9,38 @@ use Moose;
 use Path::Class qw( dir );
 use Class::Load qw( );
 use Git::PurePerl::Walker::Types qw( :all );
-require Moose::Util::TypeConstraints;
+use namespace::autoclean;
+
+=head1 SYNOPSIS
+
+
+	use Git::PurePerl::Walker;
+	use Git::PurePerl::Walker::Method::FirstParent;
+
+	my $repo = Git::PurePerl->new( ... );
+
+	my $walker = Git::PurePerl::Walker->new(
+		repo => $repo,
+		method => Git::PurePerl::Walker::Method::FirstParent->new( 
+			start => $repo->ref_sha1('refs/heads/master'),
+		),
+		on_commit => sub {
+			my ( $commit ) = @_;
+			print $commit->sha1;
+		},
+	);
+
+	$walker->step_all;
+
+=cut
+
+=carg repo
+
+=attr repo
+
+=attrmethod repo
+
+=cut
 
 has repo => (
 	isa        => GPPW_Repository,
@@ -17,12 +48,27 @@ has repo => (
 	lazy_build => 1,
 );
 
+=carg method
+
+=p_attr _method
+
+=p_attrmethod _method
+
+=cut
+
 has _method => (
 	init_arg => 'method',
 	is       => 'ro',
 	isa      => GPPW_Methodish,
 	required => 1,
 );
+
+=attr method
+
+=attrmethod method
+
+=cut
+
 has 'method' => (
 	init_arg   => undef,
 	is         => 'ro',
@@ -30,12 +76,27 @@ has 'method' => (
 	lazy_build => 1,
 );
 
+=carg on_commit
+
+=p_attr _on_commit
+
+=p_attrmethod _on_commit
+
+=cut
+
 has '_on_commit' => (
 	init_arg => 'on_commit',
 	required => 1,
 	is       => 'ro',
 	isa      => GPPW_OnCommitish,
 );
+
+=attr on_commit
+
+=attrmethod on_commit
+
+=cut
+
 has 'on_commit' => (
 	init_arg   => undef,
 	isa        => GPPW_OnCommit,
@@ -43,17 +104,29 @@ has 'on_commit' => (
 	lazy_build => 1,
 );
 
+=method BUILD
+
+=cut
+
 sub BUILD {
 	my ( $self, $args ) = @_;
 	$self->reset;
 	return $self;
 }
 
+=p_method _build_repo
+
+=cut
+
 sub _build_repo {
 	my ( $self ) = shift;
 	require Git::PurePerl;
 	return Git::PurePerl->new( directory => dir( q[.] )->absolute->stringify );
 }
+
+=p_method _build_method
+
+=cut
 
 sub _build_method {
 	my ( $self )   = shift;
@@ -66,6 +139,10 @@ sub _build_method {
 	}
 	return $method->for_repository( $self->repo );
 }
+
+=p_method _build_on_commit
+
+=cut
 
 sub _build_on_commit {
 	my ( $self )      = shift;
@@ -85,6 +162,10 @@ sub _build_on_commit {
 	return $on_commit->for_repository( $self->repo );
 }
 
+=method reset
+
+=cut
+
 ## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub reset {
 	my $self = shift;
@@ -92,6 +173,10 @@ sub reset {
 	$self->on_commit->reset;
 	return $self;
 }
+
+=method step
+
+=cut
 
 sub step {
 	my $self = shift;
@@ -106,6 +191,10 @@ sub step {
 
 	return 1;
 }
+
+=method step_all
+
+=cut
 
 sub step_all {
 	my $self  = shift;

@@ -38,6 +38,8 @@ L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PureP
 
 =cut
 
+=carg events
+
 =attr events
 
 =attrmethod all_events

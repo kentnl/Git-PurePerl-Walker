@@ -37,6 +37,8 @@ L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PureP
 
 =cut
 
+=carg callback
+
 =attr callback
 
 =attrmethod callback
