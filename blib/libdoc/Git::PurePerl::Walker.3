@@ -133,7 +133,7 @@
 Git::PurePerl::Walker \- Walk over a sequence of commits in a Git::PurePerl repo
 .SH "VERSION"
 .IX Header "VERSION"
-version 0.001001
+version 0.001002
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
 .Vb 2
@@ -144,7 +144,7 @@ version 0.001001
 \&
 \&        my $walker = Git::PurePerl::Walker\->new(
 \&                repo => $repo,
-\&                method => Git::PurePerl::Walker::Method::FirstParent\->new( 
+\&                method => Git::PurePerl::Walker::Method::FirstParent\->new(
 \&                        start => $repo\->ref_sha1(\*(Aqrefs/heads/master\*(Aq),
 \&                ),
 \&                on_commit => sub {
@@ -155,24 +155,132 @@ version 0.001001
 \&
 \&        $walker\->step_all;
 .Ve
-.SH "METHODS"
-.IX Header "METHODS"
-.SS "\s-1BUILD\s0"
-.IX Subsection "BUILD"
-.SS "reset"
-.IX Subsection "reset"
-.SS "step"
-.IX Subsection "step"
-.SS "step_all"
-.IX Subsection "step_all"
 .SH "CONSTRUCTOR ARGUMENTS"
 .IX Header "CONSTRUCTOR ARGUMENTS"
 .SS "repo"
 .IX Subsection "repo"
+\&\fBMandatory:\fR An instance of \f(CW\*(C`Git::PurePerl\*(C'\fR representing
+the repository to work with.
 .SS "method"
 .IX Subsection "method"
+\&\fBMandatory:\fR either a \f(CW\*(C`Str\*(C'\fR describing a Class Name Suffix, or an \f(CW\*(C`Object\*(C'\fR
+that \f(CW\*(C`does\*(C'\fR
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\*(C'\fR.
+.PP
+If its a \f(CW\*(C`Str\*(C'\fR, the \f(CW\*(C`Str\*(C'\fR will be expanded as follows:
+.PP
+.Vb 5
+\&        \->new(
+\&                ...
+\&                method => \*(AqFoo\*(Aq,
+\&                ...
+\&        );
+\&
+\&        $className = \*(AqGit::PurePerl::Walker::Method::Foo\*(Aq
+.Ve
+.PP
+And the resulting class will be loaded, and instantiated for you. ( Assuming of
+course, you don't need to pass any fancy args ).
+.PP
+If you need fancy args, or a class outside the
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::\f(CW\*(C'\fR namespace, constructing the object will
+have to be your responsibility.
+.PP
+.Vb 5
+\&        \->new(
+\&                ...
+\&                method => Foo::Class\->new(),
+\&                ...
+\&        )
+.Ve
 .SS "on_commit"
 .IX Subsection "on_commit"
+\&\fBMandatory:\fR either a \f(CW\*(C`Str\*(C'\fR that can be expanded in a way similar to that by
+\&\f(CW\*(C`\f(CImethod\f(CW\*(C'\fR, a \f(CW\*(C`CodeRef\*(C'\fR, or an object that \f(CW\*(C`does\*(C'\fR \f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::OnCommit\f(CW\*(C'\fR.
+.PP
+If passed a \f(CW\*(C`Str\*(C'\fR it will be expanded like so:
+.PP
+.Vb 5
+\&        \->new(
+\&                ...
+\&                on_commit => $str,
+\&                ...
+\&        );
+\&
+\&        $class = \*(AqGit::PurePerl::Walker::OnCommit::\*(Aq . $str;
+.Ve
+.PP
+And the resulting class loaded and instantiated.
+.PP
+If passed a \f(CW\*(C`CodeRef\*(C'\fR,
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::OnCommit::CallBack\f(CW\*(C'\fR will be loaded and your \f(CW\*(C`CodeRef\*(C'\fR will be passed as an argument.
+.PP
+.Vb 4
+\&        \->new(
+\&                ...
+\&                on_commit => sub {
+\&                        my ( $commit ) = @_;
+\&
+\&                },
+\&                ...
+\&        );
+.Ve
+.PP
+If you need anything fancier, or requiring an unusual namespace, you'll want to
+construct the object yourself.
+.PP
+.Vb 5
+\&        \->new(
+\&                ...
+\&                on_commit => Foo::Package\->new()
+\&                ...
+\&        );
+.Ve
+.SH "METHODS"
+.IX Header "METHODS"
+.SS "reset"
+.IX Subsection "reset"
+.Vb 1
+\&        $walker\->reset();
+.Ve
+.PP
+Reset the walk routine back to the state it was before you walked.
+.SS "step"
+.IX Subsection "step"
+Increments one step forward in the git history, and dispatches the object to the
+OnCommit handlers.
+.PP
+If there are more possible steps to take, it will return a true value.
+.PP
+.Vb 3
+\&        while ( $walker\->step ) {
+\&                /* Code to execute if walker has more items */
+\&        }
+.Ve
+.PP
+This code is almost identical to:
+.PP
+.Vb 2
+\&        while(1) {
+\&                $walker\->on_commit\->handle( $walker\->method\->current );
+\&
+\&                last if not $walker\->method\->has_next;
+\&
+\&                $walker\->method\->next;
+\&
+\&                /*  Code to execute if walker has more items */
+\&        }
+.Ve
+.SS "step_all"
+.IX Subsection "step_all"
+.Vb 1
+\&        my $steps = $walker\->step_all;
+.Ve
+.PP
+Mostly a convenience method to iterate until it can iterate no more, but without
+you needing to wrap it in a \fIwhile()\fR block.
+.PP
+Returns the number of steps executed.
 .SH "ATTRIBUTES"
 .IX Header "ATTRIBUTES"
 .SS "repo"
@@ -185,10 +293,22 @@ version 0.001001
 .IX Header "ATTRIBUTE GENERATED METHODS"
 .SS "repo"
 .IX Subsection "repo"
+.Vb 2
+\&        # Getter
+\&        my $repo = $walker\->repo();
+.Ve
 .SS "method"
 .IX Subsection "method"
+.Vb 2
+\&        # Getter
+\&        my $method_object = $walker\->method();
+.Ve
 .SS "on_commit"
 .IX Subsection "on_commit"
+.Vb 2
+\&        # Getter
+\&        my $on_commit_object = $walker\->on_commit();
+.Ve
 .SH "PRIVATE ATTRIBUTES"
 .IX Header "PRIVATE ATTRIBUTES"
 .SS "_method"
@@ -207,8 +327,16 @@ version 0.001001
 .IX Header "PRIVATE ATTRIBUTE GENERATED METHODS"
 .SS "_method"
 .IX Subsection "_method"
+.Vb 2
+\&        # Getter
+\&        my $methodish = $walker\->_method();
+.Ve
 .SS "_on_commit"
 .IX Subsection "_on_commit"
+.Vb 2
+\&        # Getter
+\&        my $on_commitish => $walker\->_on_commit();
+.Ve
 .SH "AUTHOR"
 .IX Header "AUTHOR"
 Kent Fredric <kentnl@cpan.org>

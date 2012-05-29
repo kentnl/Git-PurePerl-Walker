@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::Types::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Types::VERSION = '0.001001';
+  $Git::PurePerl::Walker::Types::VERSION = '0.001002';
 }
 
 # FILENAME: Types.pm
@@ -43,7 +43,7 @@ Git::PurePerl::Walker::Types - Misc utility types for Git::PurePerl::Walker
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 AUTHOR
 

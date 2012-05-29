@@ -1,5 +1,9 @@
 Release history for Git-PurePerl-Walker
 
+0.001002 2012-05-29T07:28:29Z
+ - Greatly improve core documentation of ::Walker, covering user consumable
+   parts.
+
 0.001001 2012-05-29T05:23:43Z
  - Added an example utility in example/ which demonstrates using the tool
    for a simplistic drop-in replacement for "git log", except with far more

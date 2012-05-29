@@ -3,7 +3,7 @@ NAME
     Git::PurePerl repo
 
 VERSION
-    version 0.001001
+    version 0.001002
 
 SYNOPSIS
             use Git::PurePerl::Walker;
@@ -13,7 +13,7 @@ SYNOPSIS
 
             my $walker = Git::PurePerl::Walker->new(
                     repo => $repo,
-                    method => Git::PurePerl::Walker::Method::FirstParent->new( 
+                    method => Git::PurePerl::Walker::Method::FirstParent->new(
                             start => $repo->ref_sha1('refs/heads/master'),
                     ),
                     on_commit => sub {
@@ -24,23 +24,129 @@ SYNOPSIS
 
             $walker->step_all;
 
-METHODS
-  BUILD
-  reset
-  step
-  step_all
 CONSTRUCTOR ARGUMENTS
   repo
+    Mandatory: An instance of "Git::PurePerl" representing the repository to
+    work with.
+
   method
+    Mandatory: either a "Str" describing a Class Name Suffix, or an "Object"
+    that "does" "Git::PurePerl::Walker::Role::Method".
+
+    If its a "Str", the "Str" will be expanded as follows:
+
+            ->new(
+                    ...
+                    method => 'Foo',
+                    ...
+            );
+
+            $className = 'Git::PurePerl::Walker::Method::Foo'
+
+    And the resulting class will be loaded, and instantiated for you. (
+    Assuming of course, you don't need to pass any fancy args ).
+
+    If you need fancy args, or a class outside the
+    "Git::PurePerl::Walker::Method::" namespace, constructing the object
+    will have to be your responsibility.
+
+            ->new(
+                    ...
+                    method => Foo::Class->new(),
+                    ...
+            )
+
   on_commit
+    Mandatory: either a "Str" that can be expanded in a way similar to that
+    by "*method*", a "CodeRef", or an object that "does"
+    "Git::PurePerl::Walker::Role::OnCommit".
+
+    If passed a "Str" it will be expanded like so:
+
+            ->new(
+                    ...
+                    on_commit => $str,
+                    ...
+            );
+
+            $class = 'Git::PurePerl::Walker::OnCommit::' . $str;
+
+    And the resulting class loaded and instantiated.
+
+    If passed a "CodeRef", "Git::PurePerl::Walker::OnCommit::CallBack" will
+    be loaded and your "CodeRef" will be passed as an argument.
+
+            ->new(
+                    ...
+                    on_commit => sub {
+                            my ( $commit ) = @_;
+
+                    },
+                    ...
+            );
+
+    If you need anything fancier, or requiring an unusual namespace, you'll
+    want to construct the object yourself.
+
+            ->new(
+                    ...
+                    on_commit => Foo::Package->new()
+                    ...
+            );
+
+METHODS
+  reset
+            $walker->reset();
+
+    Reset the walk routine back to the state it was before you walked.
+
+  step
+    Increments one step forward in the git history, and dispatches the
+    object to the OnCommit handlers.
+
+    If there are more possible steps to take, it will return a true value.
+
+            while ( $walker->step ) {
+                    /* Code to execute if walker has more items */
+            }
+
+    This code is almost identical to:
+
+            while(1) {
+                    $walker->on_commit->handle( $walker->method->current );
+
+                    last if not $walker->method->has_next;
+
+                    $walker->method->next;
+
+                    /*  Code to execute if walker has more items */
+            }
+
+  step_all
+            my $steps = $walker->step_all;
+
+    Mostly a convenience method to iterate until it can iterate no more, but
+    without you needing to wrap it in a while() block.
+
+    Returns the number of steps executed.
+
 ATTRIBUTES
   repo
   method
   on_commit
 ATTRIBUTE GENERATED METHODS
   repo
+            # Getter
+            my $repo = $walker->repo();
+
   method
+            # Getter
+            my $method_object = $walker->method();
+
   on_commit
+            # Getter
+            my $on_commit_object = $walker->on_commit();
+
 PRIVATE ATTRIBUTES
   _method
   _on_commit
@@ -50,7 +156,13 @@ PRIVATE METHODS
   _build_on_commit
 PRIVATE ATTRIBUTE GENERATED METHODS
   _method
+            # Getter
+            my $methodish = $walker->_method();
+
   _on_commit
+            # Getter
+            my $on_commitish => $walker->_on_commit();
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 

@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::VERSION = '0.001001';
+  $Git::PurePerl::Walker::VERSION = '0.001002';
 }
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
@@ -21,7 +21,7 @@ use namespace::autoclean;
 
 has repo => (
 	isa        => GPPW_Repository,
-	is         => 'rw',
+	is         => 'ro',
 	lazy_build => 1,
 );
 
@@ -150,7 +150,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
@@ -161,7 +161,7 @@ version 0.001001
 
 	my $walker = Git::PurePerl::Walker->new(
 		repo => $repo,
-		method => Git::PurePerl::Walker::Method::FirstParent->new( 
+		method => Git::PurePerl::Walker::Method::FirstParent->new(
 			start => $repo->ref_sha1('refs/heads/master'),
 		),
 		on_commit => sub {
@@ -172,23 +172,125 @@ version 0.001001
 
 	$walker->step_all;
 
-=head1 METHODS
-
-=head2 BUILD
-
-=head2 reset
-
-=head2 step
-
-=head2 step_all
-
 =head1 CONSTRUCTOR ARGUMENTS
 
 =head2 repo
 
+B<Mandatory:> An instance of L<< C<Git::PurePerl>|Git::PurePerl >> representing
+the repository to work with.
+
 =head2 method
 
+B<Mandatory:> either a C<Str> describing a Class Name Suffix, or an C<Object>
+that C<does>
+L<<
+C<Git::PurePerl::B<Walker::Role::Method>>|Git::PurePerl::Walker::Role::Method
+>>.
+
+If its a C<Str>, the C<Str> will be expanded as follows:
+
+	->new(
+		...
+		method => 'Foo',
+		...
+	);
+
+	$className = 'Git::PurePerl::Walker::Method::Foo'
+
+And the resulting class will be loaded, and instantiated for you. ( Assuming of
+course, you don't need to pass any fancy args ).
+
+If you need fancy args, or a class outside the
+C<Git::PurePerl::B<Walker::Method::>> namespace, constructing the object will
+have to be your responsibility.
+
+	->new(
+		...
+		method => Foo::Class->new(),
+		...
+	)
+
 =head2 on_commit
+
+B<Mandatory:> either a C<Str> that can be expanded in a way similar to that by
+L<< C<I<method>>|/method >>, a C<CodeRef>, or an object that C<does> L<<
+C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit
+>>.
+
+If passed a C<Str> it will be expanded like so:
+
+	->new(
+		...
+		on_commit => $str,
+		...
+	);
+
+	$class = 'Git::PurePerl::Walker::OnCommit::' . $str;
+
+And the resulting class loaded and instantiated.
+
+If passed a C<CodeRef>,
+L<<
+C<Git::PurePerl::B<Walker::OnCommit::CallBack>>|Git::PurePerl::Walker::OnCommit::CallBack
+>> will be loaded and your C<CodeRef> will be passed as an argument.
+
+	->new(
+		...
+		on_commit => sub {
+			my ( $commit ) = @_;
+
+		},
+		...
+	);
+
+If you need anything fancier, or requiring an unusual namespace, you'll want to
+construct the object yourself.
+
+	->new(
+		...
+		on_commit => Foo::Package->new()
+		...
+	);
+
+=head1 METHODS
+
+=head2 reset
+
+	$walker->reset();
+
+Reset the walk routine back to the state it was before you walked.
+
+=head2 step
+
+Increments one step forward in the git history, and dispatches the object to the
+OnCommit handlers.
+
+If there are more possible steps to take, it will return a true value.
+
+	while ( $walker->step ) {
+		/* Code to execute if walker has more items */
+	}
+
+This code is almost identical to:
+
+	while(1) {
+		$walker->on_commit->handle( $walker->method->current );
+
+		last if not $walker->method->has_next;
+
+		$walker->method->next;
+
+		/*  Code to execute if walker has more items */
+	}
+
+=head2 step_all
+
+	my $steps = $walker->step_all;
+
+Mostly a convenience method to iterate until it can iterate no more, but without
+you needing to wrap it in a while() block.
+
+Returns the number of steps executed.
 
 =head1 ATTRIBUTES
 
@@ -202,9 +304,18 @@ version 0.001001
 
 =head2 repo
 
+	# Getter
+	my $repo = $walker->repo();
+
 =head2 method
 
+	# Getter
+	my $method_object = $walker->method();
+
 =head2 on_commit
+
+	# Getter
+	my $on_commit_object = $walker->on_commit();
 
 =head1 PRIVATE ATTRIBUTES
 
@@ -224,7 +335,15 @@ version 0.001001
 
 =head2 _method
 
+	# Getter
+	my $methodish = $walker->_method();
+
 =head2 _on_commit
+
+	# Getter
+	my $on_commitish => $walker->_on_commit();
+
+=for Pod::Coverage BUILD
 
 =head1 AUTHOR
 

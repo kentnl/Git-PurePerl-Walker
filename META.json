@@ -67,35 +67,35 @@
    "provides" : {
       "Git::PurePerl::Walker" : {
          "file" : "lib/Git/PurePerl/Walker.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::Method::FirstParent" : {
          "file" : "lib/Git/PurePerl/Walker/Method/FirstParent.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::OnCommit::CallBack" : {
          "file" : "lib/Git/PurePerl/Walker/OnCommit/CallBack.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::OnCommit::List" : {
          "file" : "lib/Git/PurePerl/Walker/OnCommit/List.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::Role::HasRepo" : {
          "file" : "lib/Git/PurePerl/Walker/Role/HasRepo.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::Role::Method" : {
          "file" : "lib/Git/PurePerl/Walker/Role/Method.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::Role::OnCommit" : {
          "file" : "lib/Git/PurePerl/Walker/Role/OnCommit.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       },
       "Git::PurePerl::Walker::Types" : {
          "file" : "lib/Git/PurePerl/Walker/Types.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       }
    },
    "release_status" : "stable",
@@ -107,7 +107,7 @@
          "web" : "https://github.com/kentfredric/Git-PurePerl-Walker"
       }
    },
-   "version" : "0.001001",
+   "version" : "0.001002",
    "x_BuiltWith" : {
       "modules" : {
          "Archive::Tar" : "1.86",
