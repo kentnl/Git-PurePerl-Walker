@@ -101,13 +101,15 @@ L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params>>
 
 =head2 _repo
 
+=head1 PRIVATE ATTRIBUTE GENERATED METHODS
+
+=head2 _repo 
+
 =head1 CONSUMED ROLES
 
 =head2 MooseX::Clone
 
 L<< C<MooseX::B<Clone>>|MooseX::Clone >>
-
-=p_attrmethod _repo 
 
 =head1 AUTHOR
 
