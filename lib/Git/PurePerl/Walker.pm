@@ -18,6 +18,7 @@ use Git::PurePerl::Walker::Types qw( :all );
 use namespace::autoclean;
 
 
+
 has repo => (
 	isa        => GPPW_Repository,
 	is         => 'rw',
@@ -149,6 +150,26 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 =head1 VERSION
 
 version 0.001000
+
+=head1 SYNOPSIS
+
+	use Git::PurePerl::Walker;
+	use Git::PurePerl::Walker::Method::FirstParent;
+
+	my $repo = Git::PurePerl->new( ... );
+
+	my $walker = Git::PurePerl::Walker->new(
+		repo => $repo,
+		method => Git::PurePerl::Walker::Method::FirstParent->new( 
+			start => $repo->ref_sha1('refs/heads/master'),
+		),
+		on_commit => sub {
+			my ( $commit ) = @_;
+			print $commit->sha1;
+		},
+	);
+
+	$walker->step_all;
 
 =head1 METHODS
 
