@@ -63,7 +63,9 @@ version 0.001000
 
 =head1 CONSUMED ROLES
 
-=head2 Git::PurePler::Walker::Role::HasRepo
+=head2 Git::PurePerl::Walker::Role::HasRepo
+
+L<Git::PurePerl::Walker::Role::HasRepo>
 
 =head1 AUTHOR
 
