@@ -39,7 +39,7 @@ sub has_next {
 	}
 	return 1;
 }
-
+## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub next {
 	my ( $self ) = @_;
 	my $commit;
