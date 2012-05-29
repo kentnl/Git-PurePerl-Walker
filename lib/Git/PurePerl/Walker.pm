@@ -161,7 +161,7 @@ version 0.001002
 
 	my $walker = Git::PurePerl::Walker->new(
 		repo => $repo,
-		method => Git::PurePerl::Walker::Method::FirstParent->new( 
+		method => Git::PurePerl::Walker::Method::FirstParent->new(
 			start => $repo->ref_sha1('refs/heads/master'),
 		),
 		on_commit => sub {
@@ -182,7 +182,7 @@ the repository to work with.
 =head2 method
 
 B<Mandatory:> either a C<Str> describing a Class Name Suffix, or an C<Object>
-that C<does> 
+that C<does>
 L<<
 C<Git::PurePerl::B<Walker::Role::Method>>|Git::PurePerl::Walker::Role::Method
 >>.
@@ -227,12 +227,12 @@ If passed a C<Str> it will be expanded like so:
 
 	$class = 'Git::PurePerl::Walker::OnCommit::' . $str;
 
-And the resulting class loaded and instantiated. 
+And the resulting class loaded and instantiated.
 
 If passed a C<CodeRef>,
 L<<
 C<Git::PurePerl::B<Walker::OnCommit::CallBack>>|Git::PurePerl::Walker::OnCommit::CallBack
->> will be loaded and your C<CodeRef> will be passed as an argument. 
+>> will be loaded and your C<CodeRef> will be passed as an argument.
 
 	->new(
 		...
@@ -244,7 +244,7 @@ C<Git::PurePerl::B<Walker::OnCommit::CallBack>>|Git::PurePerl::Walker::OnCommit:
 	);
 
 If you need anything fancier, or requiring an unusual namespace, you'll want to
-construct the object yourself. 
+construct the object yourself.
 
 	->new(
 		...

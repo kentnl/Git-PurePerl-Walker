@@ -13,7 +13,7 @@ SYNOPSIS
 
             my $walker = Git::PurePerl::Walker->new(
                     repo => $repo,
-                    method => Git::PurePerl::Walker::Method::FirstParent->new( 
+                    method => Git::PurePerl::Walker::Method::FirstParent->new(
                             start => $repo->ref_sha1('refs/heads/master'),
                     ),
                     on_commit => sub {
