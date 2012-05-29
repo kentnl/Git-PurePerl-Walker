@@ -46,6 +46,7 @@ sub next {
 	$self->_commit( $commit = $self->peek_next );
 	return $commit;
 }
+## use critic
 
 sub peek_next {
 	my $commit = ( shift )->_commit->parent;
