@@ -1,0 +1,62 @@
+NAME
+    Git::PurePerl::Walker - Walk over a sequence of commits in a
+    Git::PurePerl repo
+
+VERSION
+    version 0.001000
+
+SYNOPSIS
+            use Git::PurePerl::Walker;
+            use Git::PurePerl::Walker::Method::FirstParent;
+
+            my $repo = Git::PurePerl->new( ... );
+
+            my $walker = Git::PurePerl::Walker->new(
+                    repo => $repo,
+                    method => Git::PurePerl::Walker::Method::FirstParent->new( 
+                            start => $repo->ref_sha1('refs/heads/master'),
+                    ),
+                    on_commit => sub {
+                            my ( $commit ) = @_;
+                            print $commit->sha1;
+                    },
+            );
+
+            $walker->step_all;
+
+METHODS
+  BUILD
+  reset
+  step
+  step_all
+CONSTRUCTOR ARGUMENTS
+  repo
+  method
+  on_commit
+ATTRIBUTES
+  repo
+  method
+  on_commit
+ATTRIBUTE GENERATED METHODS
+  repo
+  method
+  on_commit
+PRIVATE ATTRIBUTES
+  _method
+  _on_commit
+PRIVATE METHODS
+  _build_repo
+  _build_method
+  _build_on_commit
+PRIVATE ATTRIBUTE GENERATED METHODS
+  _method
+  _on_commit
+AUTHOR
+    Kent Fredric <kentnl@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
