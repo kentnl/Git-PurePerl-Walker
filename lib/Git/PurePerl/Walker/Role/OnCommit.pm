@@ -19,6 +19,9 @@ use Moose::Role;
 with 'Git::PurePerl::Walker::Role::HasRepo';
 
 
+
+
+
 requires 'handle';
 
 
@@ -56,6 +59,20 @@ do something with.
 This method is signaled when the associated repository is resetting its iteration. 
 
 You can either no-op this, or make it do something useful.
+
+=head1 INHERITED METHODS
+
+=head2 for_repository
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+
+=head2 clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+
+=head2 _repo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/_repo >>
 
 =head1 CONSUMED ROLES
 
