@@ -224,14 +224,7 @@ version 0.001002
 
 =head2 _on_commit
 
-=begin Pod::Coverage
-
-
-
-
-=end Pod::Coverage
-
-BUILD
+=for Pod::Coverage BUILD
 
 =head1 AUTHOR
 

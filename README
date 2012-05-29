@@ -50,8 +50,6 @@ PRIVATE METHODS
 PRIVATE ATTRIBUTE GENERATED METHODS
   _method
   _on_commit
-    BUILD
-
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
