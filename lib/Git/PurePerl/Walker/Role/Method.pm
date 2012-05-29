@@ -55,7 +55,7 @@ version 0.001000
 
 	my $commit = $object->current;
 
-Should return a L<Git::PurePerl::Object::Commit>
+Should return a L<< C<Git::PurePerl::B<Object::Commit>>|Git::PurePerl::Object::Commmit >>
 
 =head2 has_next
 
@@ -88,7 +88,7 @@ C<< $object->current >> returns the first result again.
 
 =head2 Git::PurePerl::Walker::Role::HasRepo
 
-L<Git::PurePerl::Walker::Role::HasRepo>
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>>|Git::PurePerl::Walker::Role::HasRepo >>
 
 =head1 AUTHOR
 
