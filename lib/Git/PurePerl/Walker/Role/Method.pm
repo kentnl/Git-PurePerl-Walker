@@ -67,9 +67,22 @@ Should return true if C<< -E<gt>next >> will expose a previously unseen object.
 
 =head2 next
 
+	my $next_object = $object->next;
+
+Should internally move to the next object, and return that next object.
+
 =head2 peek_next
 
+	my $next_object = $object->peek_next;
+
+The same as L</next> except internal position should not change.
+
 =head2 reset
+
+	$object->reset;
+
+Should reset the internal position to some position so that calling
+C<< $object->current >> returns the first result again.
 
 =head1 CONSUMED ROLES
 
