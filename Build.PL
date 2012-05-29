@@ -25,7 +25,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Git-PurePerl-Walker",
-  "dist_version" => "0.001000",
+  "dist_version" => "0.001001",
   "license" => "perl",
   "module_name" => "Git::PurePerl::Walker",
   "recommends" => {},
