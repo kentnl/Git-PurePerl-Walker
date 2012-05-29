@@ -172,6 +172,59 @@ version 0.001002
 
 	$walker->step_all;
 
+=head1 CONSTRUCTOR ARGUMENTS
+
+=head2 repo
+
+B<Mandatory:> An instance of L<< C<Git::PurePerl>|Git::PurePerl >> representing
+the repository to work with.
+
+=head2 method
+
+B<Mandatory:> either a C<Str> describing a Class Name Suffix, or an C<Object>
+that C<does> 
+L<<
+C<Git::PurePerl::B<Walker::Role::Method>>|Git::PurePerl::Walker::Role::Method
+>>.
+
+If its a C<Str>, the C<Str> will be expanded as follows:
+
+	->new(
+		...
+		method => 'Foo',
+		...
+	);
+
+	$className = 'Git::PurePerl::Walker::Method::Foo'
+
+And the resulting class will be loaded, and instantiated for you. ( Assuming of
+course, you don't need to pass any fancy args ).
+
+If you need fancy args, or a class outside the
+C<Git::PurePerl::B<Walker::Method::>> namespace, constructing the object will
+have to be your responsibility.
+
+=head2 on_commit
+
+B<Mandatory:> either a C<Str> that can be expanded in a way similar to that by
+L<< C<I<method>>|/method >>, a C<CodeRef>, or an object that C<does> L<<
+C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit
+>>.
+
+If passed a C<Str> it will be expanded like so:
+
+	$class = 'Git::PurePerl::Walker::OnCommit::' . $str;
+
+And the resulting class loaded and instantiated. 
+
+If passed a C<CodeRef>,
+L<<
+C<Git::PurePerl::B<Walker::OnCommit::CallBack>>|Git::PurePerl::Walker::OnCommit::CallBack
+>> will be loaded and your C<CodeRef> will be passed as an argument. 
+
+If you need anything fancier, or requiring an unusual namespace, you'll want to
+construct the object yourself. 
+
 =head1 METHODS
 
 =head2 reset
@@ -211,40 +264,6 @@ Mostly a convenience method to iterate until it can iterate no more, but without
 you needing to wrap it in a while() block.
 
 Returns the number of steps executed.
-
-=head1 CONSTRUCTOR ARGUMENTS
-
-=head2 repo
-
-B<Mandatory:> An instance of L<< C<Git::PurePerl>|Git::PurePerl >> representing
-the repository to work with.
-
-=head2 method
-
-B<Mandatory:> either a C<Str> describing a Class Name Suffix, or an C<Object>
-that C<does> 
-L<<
-C<Git::PurePerl::B<Walker::Role::Method>>|Git::PurePerl::Walker::Role::Method
->>.
-
-If its a C<Str>, the C<Str> will be expanded as follows:
-
-	->new(
-		...
-		method => 'Foo',
-		...
-	);
-
-	$className = 'Git::PurePerl::Walker::Method::Foo'
-
-And the resulting class will be loaded, and instantiated for you. ( Assuming of
-course, you don't need to pass any fancy args ).
-
-If you need fancy args, or a class outside the
-C<Git::PurePerl::B<Walker::Method::>> namespace, constructing the object will
-have to be your responsibility.
-
-=head2 on_commit
 
 =head1 ATTRIBUTES
 

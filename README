@@ -24,6 +24,49 @@ SYNOPSIS
 
             $walker->step_all;
 
+CONSTRUCTOR ARGUMENTS
+  repo
+    Mandatory: An instance of "Git::PurePerl" representing the repository to
+    work with.
+
+  method
+    Mandatory: either a "Str" describing a Class Name Suffix, or an "Object"
+    that "does" "Git::PurePerl::Walker::Role::Method".
+
+    If its a "Str", the "Str" will be expanded as follows:
+
+            ->new(
+                    ...
+                    method => 'Foo',
+                    ...
+            );
+
+            $className = 'Git::PurePerl::Walker::Method::Foo'
+
+    And the resulting class will be loaded, and instantiated for you. (
+    Assuming of course, you don't need to pass any fancy args ).
+
+    If you need fancy args, or a class outside the
+    "Git::PurePerl::Walker::Method::" namespace, constructing the object
+    will have to be your responsibility.
+
+  on_commit
+    Mandatory: either a "Str" that can be expanded in a way similar to that
+    by "*method*", a "CodeRef", or an object that "does"
+    "Git::PurePerl::Walker::Role::OnCommit".
+
+    If passed a "Str" it will be expanded like so:
+
+            $class = 'Git::PurePerl::Walker::OnCommit::' . $str;
+
+    And the resulting class loaded and instantiated.
+
+    If passed a "CodeRef", "Git::PurePerl::Walker::OnCommit::CallBack" will
+    be loaded and your "CodeRef" will be passed as an argument.
+
+    If you need anything fancier, or requiring an unusual namespace, you'll
+    want to construct the object yourself.
+
 METHODS
   reset
             $walker->reset();
@@ -60,33 +103,6 @@ METHODS
 
     Returns the number of steps executed.
 
-CONSTRUCTOR ARGUMENTS
-  repo
-    Mandatory: An instance of "Git::PurePerl" representing the repository to
-    work with.
-
-  method
-    Mandatory: either a "Str" describing a Class Name Suffix, or an "Object"
-    that "does" "Git::PurePerl::Walker::Role::Method".
-
-    If its a "Str", the "Str" will be expanded as follows:
-
-            ->new(
-                    ...
-                    method => 'Foo',
-                    ...
-            );
-
-            $className = 'Git::PurePerl::Walker::Method::Foo'
-
-    And the resulting class will be loaded, and instantiated for you. (
-    Assuming of course, you don't need to pass any fancy args ).
-
-    If you need fancy args, or a class outside the
-    "Git::PurePerl::Walker::Method::" namespace, constructing the object
-    will have to be your responsibility.
-
-  on_commit
 ATTRIBUTES
   repo
   method
