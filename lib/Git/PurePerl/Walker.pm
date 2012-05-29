@@ -55,6 +55,7 @@ has 'on_commit' => (
 	lazy_build => 1,
 );
 
+
 sub BUILD {
 	my ( $self, $args ) = @_;
 	$self->reset;
@@ -150,6 +151,8 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 version 0.001000
 
 =head1 METHODS
+
+=head2 BUILD
 
 =head2 reset
 

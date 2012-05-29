@@ -6,6 +6,7 @@ VERSION
     version 0.001000
 
 METHODS
+  BUILD
   reset
   step
   step_all
