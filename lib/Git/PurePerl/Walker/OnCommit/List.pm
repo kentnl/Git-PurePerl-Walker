@@ -85,15 +85,15 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 version 0.001000
 
+=head1 ATTRIBUTES
+
+=head2 events
+
 =head1 ATTRIBUTE GENERATED METHODS
 
 =head2 all_events
 
 =head2 add_event
-
-=head1 ATTRIBUTES
-
-=head2 events
 
 =head1 CONSUMED ROLES
 

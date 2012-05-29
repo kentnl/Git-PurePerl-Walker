@@ -18,6 +18,7 @@ use Moose::Role;
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
 
 
+
 with qw( MooseX::Clone );
 
 
@@ -90,19 +91,23 @@ This instead is simple:
 
 And now all C<@foos> can be mangled independently.
 
+=head1 INHERITED METHODS
+
+=head2 clone
+
+L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params>>
+
 =head1 PRIVATE ATTRIBUTES
 
 =head2 _repo
-
-=head1 PRIVATE METHODS
-
-=head2 _repo 
 
 =head1 CONSUMED ROLES
 
 =head2 MooseX::Clone
 
 L<< C<MooseX::B<Clone>>|MooseX::Clone >>
+
+=p_attrmethod _repo 
 
 =head1 AUTHOR
 
