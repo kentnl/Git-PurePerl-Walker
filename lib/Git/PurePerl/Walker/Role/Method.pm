@@ -53,7 +53,17 @@ version 0.001000
 
 =head2 current
 
+	my $commit = $object->current;
+
+Should return a L<Git::PurePerl::Object::Commit>
+
 =head2 has_next
+
+	if ( $object->has_next ) {
+
+	}
+
+Should return true if C<<->next>> will expose a previously unseen object.
 
 =head2 next
 
