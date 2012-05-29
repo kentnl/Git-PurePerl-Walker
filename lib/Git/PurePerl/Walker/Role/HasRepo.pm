@@ -52,7 +52,7 @@ version 0.001000
 This is a composition role consumed by other roles to provide them with a
 private repo property.
 
-This role also folds in L<MooseX::Clone> and provides the 'for_repository'
+This role also folds in L<< C<MooseX::B<Clone>>|MooseX::Clone >> and provides the 'for_repository'
 method which sets the repo property.
 
 	package Foo {
@@ -71,7 +71,7 @@ method which sets the repo property.
 
 Construct an entity for a given repository. 
 
-This internally calls L<MooseX::Clone> on the current object, passing the _repo
+This internally calls L<< C<MooseX::B<Clone>>|MooseX::Clone >> on the current object, passing the _repo
 field to its constructor, producing a seperate, disconnected object to work
 with.
 
@@ -101,6 +101,8 @@ And now all C<@foos> can be mangled independently.
 =head1 CONSUMED ROLES
 
 =head2 MooseX::Clone
+
+L<< C<MooseX::B<Clone>>|MooseX::Clone >>
 
 =head1 AUTHOR
 
