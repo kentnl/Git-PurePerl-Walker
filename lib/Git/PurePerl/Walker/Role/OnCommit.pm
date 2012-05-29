@@ -14,10 +14,15 @@ BEGIN {
 # ABSTRACT: An event to execute when a commit is encountered
 
 use Moose::Role;
+
+
 with 'Git::PurePerl::Walker::Role::HasRepo';
-requires 'reset';
+
+
 requires 'handle';
 
+
+requires 'reset';
 no Moose::Role;
 1;
 
@@ -33,6 +38,30 @@ Git::PurePerl::Walker::Role::OnCommit - An event to execute when a commit is enc
 =head1 VERSION
 
 version 0.001000
+
+=head1 REQUIRES METHODS
+
+=head2 handle
+
+This is the primary event that is triggered when every commit is processed.
+
+C<handle> is passed a L<<
+C<Git::PurePerl::B<Object::Commit>>|Git::PurePerl::Object::Commmit >> for you to
+do something with.
+
+	$object->handle( $commit )
+
+=head2 reset
+
+This method is signaled when the associated repository is resetting its iteration. 
+
+You can either no-op this, or make it do something useful.
+
+=head1 CONSUMED ROLES
+
+=head2 Git::PurePerl::Walker::Role::HasRepo
+
+L<< C<Git::PurePerl::B<Walker::Role::HasRepo>>|Git::PurePerl::Walker::Role::HasRepo >>
 
 =head1 AUTHOR
 
