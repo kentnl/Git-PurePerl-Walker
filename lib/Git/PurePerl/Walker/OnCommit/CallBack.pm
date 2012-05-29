@@ -22,12 +22,14 @@ has callback => (
 sub handle {
 	my ( $self, $commit ) = @_;
 	$self->do_callback( $commit );
-
+	return $self;
 }
 
+## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-
+	return shift;
 }
+## use critic
 
 no Moose;
 __PACKAGE__->meta->make_immutable;

@@ -26,31 +26,34 @@ sub current {
 sub has_next {
 	my ( $self ) = @_;
 	if ( not $self->_commit ) {
-		return undef;
+		return;
 	}
 	if ( not $self->_commit->parent ) {
-		return undef;
+		return;
 	}
 	return 1;
 }
-
+## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub next {
 	my ( $self ) = @_;
 	my $commit;
 	$self->_commit( $commit = $self->peek_next );
 	return $commit;
 }
+## use critic
 
 sub peek_next {
 	my $commit = ( shift )->_commit->parent;
 	return $commit;
 }
 
+## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
 	my ( $self ) = @_;
 	$self->_commit( $self->_repo->get_object( $self->start ) );
 	return $self;
 }
+## use critic
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
