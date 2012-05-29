@@ -84,6 +84,12 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 version 0.001000
 
+=head1 CONSUMED ROLES
+
+=head2 Git::PurePerl::Walker::Role::OnCommit
+
+L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit >>
+
 =head1 ROLE SATISFYING METHODS
 
 =head2 handle
@@ -93,10 +99,6 @@ L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle>>|Git::PurePerl::Wa
 =head2 reset
 
 L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset>>|Git::PurePerl::Walker::Role::OnCommit/reset >>
-
-=consumesrole Git::PurePerl::Walker::Role::OnCommit
-
-L<< C<Git::PurePerl::B<Walker::Role::OnCommit>>|Git::PurePerl::Walker::Role::OnCommit >>
 
 =head1 AUTHOR
 
