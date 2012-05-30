@@ -2,6 +2,8 @@ Release history for Git-PurePerl-Walker
 
 {{$NEXT}}
 
+0.002000 2012-05-30T02:57:21Z
+
  [Git::Changes]
  - 48225024 Tidy (Kent Fredric)
  - 474f7725 Tidyup / Critic (Kent Fredric)
