@@ -9,8 +9,10 @@ README
 dist.ini
 example/ls_sha1.pl
 example/ls_sha1.pl_output.html
+example/ls_sha1_as_commit.pl
 lib/Git/PurePerl/Walker.pm
 lib/Git/PurePerl/Walker/Method/FirstParent.pm
+lib/Git/PurePerl/Walker/Method/FirstParent/FromHEAD.pm
 lib/Git/PurePerl/Walker/OnCommit/CallBack.pm
 lib/Git/PurePerl/Walker/OnCommit/List.pm
 lib/Git/PurePerl/Walker/Role/HasRepo.pm
@@ -21,7 +23,8 @@ perlcritic.rc
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/01_test.t
-t/02_firstparent.t
+t/0200_firstparent.t
+t/0201_firstparent_fromhead.t
 t/03_callback.t
 t/04_list.t
 t/git_repo_01.tar.gz

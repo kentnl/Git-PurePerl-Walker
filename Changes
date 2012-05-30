@@ -1,5 +1,16 @@
 Release history for Git-PurePerl-Walker
 
+0.002000 2012-05-30T02:57:21Z
+
+ [Git::Changes]
+ - 48225024 Tidy (Kent Fredric)
+ - 474f7725 Tidyup / Critic (Kent Fredric)
+ - d059f592 Update Changelog (Kent Fredric)
+ - a53fe247 Add a ChangeLog format emitter (Kent Fredric)
+ - 3387631d Document FromHEAD Method (Kent Fredric)
+ - 77e5a1a9 add a FromHEAD method walker that doesn't need consttructor
+   args (Kent Fredric)
+
 0.001002 2012-05-29T07:28:29Z
  - Greatly improve core documentation of ::Walker, covering user consumable
    parts.

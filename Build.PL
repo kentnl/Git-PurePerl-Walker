@@ -25,12 +25,13 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Git-PurePerl-Walker",
-  "dist_version" => "0.001002",
+  "dist_version" => "0.002000",
   "license" => "perl",
   "module_name" => "Git::PurePerl::Walker",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Carp" => 0,
     "Class::Load" => 0,
     "Git::PurePerl" => 0,
     "Moose" => 0,

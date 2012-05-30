@@ -123,29 +123,17 @@
 .rm #[ #] #H #V #F C
 .\" ========================================================================
 .\"
-.IX Title "Git::PurePerl::Walker::Method::FirstParent 3"
-.TH Git::PurePerl::Walker::Method::FirstParent 3 "2012-05-30" "perl v5.16.0" "User Contributed Perl Documentation"
+.IX Title "Git::PurePerl::Walker::Method::FirstParent::FromHEAD 3"
+.TH Git::PurePerl::Walker::Method::FirstParent::FromHEAD 3 "2012-05-30" "perl v5.16.0" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
 .nh
 .SH "NAME"
-Git::PurePerl::Walker::Method::FirstParent \- Walk down a tree following the first parent.
+Git::PurePerl::Walker::Method::FirstParent::FromHEAD \- Start at the HEAD of the current repo.
 .SH "VERSION"
 .IX Header "VERSION"
 version 0.002000
-.SH "CONSTRUCTOR ARGUMENTS"
-.IX Header "CONSTRUCTOR ARGUMENTS"
-.SS "start"
-.IX Subsection "start"
-.SH "ATTRIBUTES"
-.IX Header "ATTRIBUTES"
-.SS "start"
-.IX Subsection "start"
-.SH "ATTRIBUTE GENERATED METHODS"
-.IX Header "ATTRIBUTE GENERATED METHODS"
-.SS "start"
-.IX Subsection "start"
 .SH "INHERITED METHODS"
 .IX Header "INHERITED METHODS"
 .SS "for_repository"
@@ -157,44 +145,43 @@ version 0.002000
 .SS "_repo"
 .IX Subsection "_repo"
 \&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::HasRepo\f(CW\->\f(CI_repo( $repo )\f(CW\*(C'\fR
-.SH "PRIVATE CONSTRUCTOR ARGUMENTS"
-.IX Header "PRIVATE CONSTRUCTOR ARGUMENTS"
+.SS "start"
+.IX Subsection "start"
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CIstart( $commit )\f(CW\*(C'\fR
 .SS "_commit"
 .IX Subsection "_commit"
-.SH "PRIVATE ATTRIBUTES"
-.IX Header "PRIVATE ATTRIBUTES"
-.SS "_commit"
-.IX Subsection "_commit"
-.SH "PRIVATE METHODS"
-.IX Header "PRIVATE METHODS"
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CI_commit( $commit_object )\f(CW\*(C'\fR
 .SS "_build_commit"
 .IX Subsection "_build_commit"
-.SH "PRIVATE ATTRIBUTE GENERATED METHODS"
-.IX Header "PRIVATE ATTRIBUTE GENERATED METHODS"
-.SS "_commit"
-.IX Subsection "_commit"
-.SH "CONSUMED ROLES"
-.IX Header "CONSUMED ROLES"
-.SS "Git::PurePerl::Walker::Role::Method"
-.IX Subsection "Git::PurePerl::Walker::Role::Method"
-\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\*(C'\fR
-.SH "ROLE SATISFYING METHODS"
-.IX Header "ROLE SATISFYING METHODS"
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CI_build_commit()\f(CW\*(C'\fR
 .SS "current"
 .IX Subsection "current"
-\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\->\f(CIcurrent()\f(CW\*(C'\fR
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CIcurrent()\f(CW\*(C'\fR
 .SS "has_next"
 .IX Subsection "has_next"
-\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\->\f(CIhas_next()\f(CW\*(C'\fR
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CIhas_next()\f(CW\*(C'\fR
 .SS "next"
 .IX Subsection "next"
-\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\->\f(CInext()\f(CW\*(C'\fR
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CInext()\f(CW\*(C'\fR
 .SS "peek_next"
 .IX Subsection "peek_next"
-\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\->\f(CIpeek_next()\f(CW\*(C'\fR
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CIpeek_next()\f(CW\*(C'\fR
 .SS "reset"
 .IX Subsection "reset"
-\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Role::Method\f(CW\->\f(CIreset()\f(CW\*(C'\fR
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\->\f(CIreset()\f(CW\*(C'\fR
+.SH "PRIVATE METHODS"
+.IX Header "PRIVATE METHODS"
+.SS "_build_start"
+.IX Subsection "_build_start"
+.SH "PRIVATE ATTRIBUTE GENERATED METHODS"
+.IX Header "PRIVATE ATTRIBUTE GENERATED METHODS"
+.SS "_has_repo"
+.IX Subsection "_has_repo"
+.SH "EXTENDS"
+.IX Header "EXTENDS"
+.SS "Git::PurePerl::Walker::Method::FirstParent"
+.IX Subsection "Git::PurePerl::Walker::Method::FirstParent"
+\&\f(CW\*(C`Git::PurePerl::\f(CBWalker::Method::FirstParent\f(CW\*(C'\fR
 .SH "AUTHOR"
 .IX Header "AUTHOR"
 Kent Fredric <kentnl@cpan.org>

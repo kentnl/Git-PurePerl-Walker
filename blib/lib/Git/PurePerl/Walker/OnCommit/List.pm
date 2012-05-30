@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::OnCommit::List::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::OnCommit::List::VERSION = '0.001002';
+  $Git::PurePerl::Walker::OnCommit::List::VERSION = '0.002000';
 }
 
 # FILENAME: CallBack.pm
@@ -87,7 +87,7 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 =head1 VERSION
 
-version 0.001002
+version 0.002000
 
 =head1 CONSTRUCTOR ARGUMENTS
 
