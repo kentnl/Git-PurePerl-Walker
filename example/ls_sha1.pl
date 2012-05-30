@@ -49,12 +49,13 @@ sub trim {
 
 sub abbr_sha {
 	my $sha = shift;
-	return substr $sha, 0, 5;
+	return substr $sha, 0, 8;
 }
 my $repo = Git::PurePerl->new( gitdir => find_git_dir( $cwd ), );
+
 my $walker = Git::PurePerl::Walker->new(
 	repo      => $repo,
-	method    => Git::PurePerl::Walker::Method::FirstParent->new( start => $repo->head_sha1, ),
+	method    => 'FirstParent::FromHEAD',
 	on_commit => sub {
 		my $commit   = shift;
 		my $is_merge = ' ';
