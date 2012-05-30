@@ -50,6 +50,7 @@ provides:
     file: lib/Git/PurePerl/Walker/Types.pm
     version: 0.001003
 requires:
+  Carp: 0
   Class::Load: 0
   Git::PurePerl: 0
   Moose: 0
@@ -69,6 +70,7 @@ version: 0.001003
 x_BuiltWith:
   modules:
     Archive::Tar: 1.86
+    Carp: 1.26
     Class::Load: 0.19
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.4.1
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'

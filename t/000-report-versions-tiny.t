@@ -49,6 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('Archive::Tar','any version') };
+eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };

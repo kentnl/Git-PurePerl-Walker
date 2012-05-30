@@ -34,8 +34,9 @@ has '+_repo' => ( predicate => '_has_repo', );
 
 sub _build_start {
     my $self = shift;
-    unless ( $self->_has_repo ) {
-        die "No repo defined while trying to find a starting commit";
+    if ( not $self->_has_repo ) {
+		require Carp;
+		Carp::confess('No repo defined while trying to find a starting commit');
     }
     return $self->_repo->head_sha1;
 }

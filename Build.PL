@@ -31,6 +31,7 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Carp" => 0,
     "Class::Load" => 0,
     "Git::PurePerl" => 0,
     "Moose" => 0,
