@@ -23,9 +23,9 @@ extends 'Git::PurePerl::Walker::Method::FirstParent';
 
 
 has '+start' => (
-    init_arg   => undef,
-    lazy_build => 1,
-    required   => 0,
+	init_arg   => undef,
+	lazy_build => 1,
+	required   => 0,
 );
 
 
@@ -33,12 +33,12 @@ has '+_repo' => ( predicate => '_has_repo', );
 
 
 sub _build_start {
-    my $self = shift;
-    if ( not $self->_has_repo ) {
+	my $self = shift;
+	if ( not $self->_has_repo ) {
 		require Carp;
-		Carp::confess('No repo defined while trying to find a starting commit');
-    }
-    return $self->_repo->head_sha1;
+		Carp::confess( 'No repo defined while trying to find a starting commit' );
+	}
+	return $self->_repo->head_sha1;
 }
 
 
@@ -50,7 +50,6 @@ sub _build_start {
 no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
-
 
 __END__
 =pod
