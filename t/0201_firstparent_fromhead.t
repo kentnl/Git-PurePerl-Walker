@@ -15,7 +15,7 @@ my $expected = {
 };
 
 my $method_factory = Git::PurePerl::Walker::Method::FirstParent::FromHEAD->new();
-my $method = $method_factory->for_repository( $repo );
+my $method         = $method_factory->for_repository( $repo );
 
 is( $method->_commit->sha1, $expected->{ HEAD }, 'At Head' );
 is( $method->current->sha1, $expected->{ HEAD }, 'At Head' );

@@ -9,7 +9,6 @@ use warnings;
 
 use Path::Class qw( dir );
 
-
 my $cwd = dir( q{.} );
 
 sub is_git_dir {
@@ -41,6 +40,7 @@ require Git::PurePerl::Walker::Method::FirstParent;
 sub trim {
 	my $comment = shift;
 	$comment =~ s/\s+/ /g;
+
 	#if ( length( $comment ) > 80 ) {
 	#	return substr( $comment, 0, 80 ) . '...';
 	#}
@@ -57,7 +57,7 @@ use CPAN::Changes;
 use CPAN::Changes::Release;
 my $release = CPAN::Changes::Release->new(
 	version => '1.0',
-	date => '2012-05-30',
+	date    => '2012-05-30',
 
 );
 
@@ -65,14 +65,18 @@ my $walker = Git::PurePerl::Walker->new(
 	repo      => $repo,
 	method    => 'FirstParent::FromHEAD',
 	on_commit => sub {
-		my $commit   = shift;
-		$release->add_changes( { group => 'Git::Changes' }, sprintf "%s %s (%s)", abbr_sha( $commit->sha1 ), trim( $commit->comment ), $commit->author->name);
+		my $commit = shift;
+		$release->add_changes(
+			{ group => 'Git::Changes' },
+			sprintf "%s %s (%s)",
+			abbr_sha( $commit->sha1 ),
+			trim( $commit->comment ),
+			$commit->author->name
+		);
 	},
 );
 
 $walker->step_all;
-my $changes = CPAN::Changes->new(
-	preamble => "Revision History for \$Project",
-);
+my $changes = CPAN::Changes->new( preamble => "Revision History for \$Project", );
 $changes->add_release( $release );
 print $changes->serialize();
