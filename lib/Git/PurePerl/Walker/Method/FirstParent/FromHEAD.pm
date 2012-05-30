@@ -119,7 +119,9 @@ L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<reset()>>|Git::PurePe
 
 =head2 _has_repo
 
-=extends Git::PurePerl::Walker::Method::FirstParent
+=head1 EXTENDS
+
+=head2 Git::PurePerl::Walker::Method::FirstParent
 
 L<< C<Git::PurePerl::B<Walker::Method::FirstParent>>|Git::PurePerl::Walker::Method::FirstParent >>
 
