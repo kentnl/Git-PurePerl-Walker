@@ -6,7 +6,7 @@ BEGIN {
   $Git::PurePerl::Walker::Method::FirstParent::FromHEAD::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Git::PurePerl::Walker::Method::FirstParent::FromHEAD::VERSION = '0.001003';
+  $Git::PurePerl::Walker::Method::FirstParent::FromHEAD::VERSION = '0.002000';
 }
 
 # FILENAME: FromHEAD.pm
@@ -62,7 +62,7 @@ Git::PurePerl::Walker::Method::FirstParent::FromHEAD - Start at the HEAD of the 
 
 =head1 VERSION
 
-version 0.001003
+version 0.002000
 
 =head1 INHERITED METHODS
 
