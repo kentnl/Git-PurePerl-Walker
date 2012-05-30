@@ -9,6 +9,7 @@ README
 dist.ini
 example/ls_sha1.pl
 example/ls_sha1.pl_output.html
+example/ls_sha1_as_commit.pl
 lib/Git/PurePerl/Walker.pm
 lib/Git/PurePerl/Walker/Method/FirstParent.pm
 lib/Git/PurePerl/Walker/Method/FirstParent/FromHEAD.pm
