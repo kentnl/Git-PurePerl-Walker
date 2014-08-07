@@ -7,6 +7,8 @@ our $VERSION = '0.003000';
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moose;
 use Path::Class qw( dir );
 use Class::Load qw( );

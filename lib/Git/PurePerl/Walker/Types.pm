@@ -5,9 +5,9 @@ package Git::PurePerl::Walker::Types;
 
 our $VERSION = '0.003000';
 
-# FILENAME: Types.pm
-# CREATED: 28/05/12 19:47:20 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Misc utility types for Git::PurePerl::Walker
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use MooseX::Types -declare => [
 	qw(
