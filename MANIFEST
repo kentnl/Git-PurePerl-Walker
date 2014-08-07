@@ -23,10 +23,12 @@ lib/Git/PurePerl/Walker/Role/HasRepo.pm
 lib/Git/PurePerl/Walker/Role/Method.pm
 lib/Git/PurePerl/Walker/Role/OnCommit.pm
 lib/Git/PurePerl/Walker/Types.pm
+maint/perlcritic.rc.gen.pl
 misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev
 misc/Changes.deps.opt
+misc/perlcritic.deps
 perlcritic.rc
 t/00-compile/lib_Git_PurePerl_Walker_Method_FirstParent_FromHEAD_pm.t
 t/00-compile/lib_Git_PurePerl_Walker_Method_FirstParent_pm.t

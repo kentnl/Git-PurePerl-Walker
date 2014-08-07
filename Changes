@@ -1,6 +1,6 @@
 Release history for Git-PurePerl-Walker
 
-0.003000 2014-08-07T19:17:14Z
+0.003000 2014-08-07T19:18:49Z
  [00 Major]
  - Changes that may affect hand-operated downstreams.
 
@@ -13,7 +13,7 @@ Release history for Git-PurePerl-Walker
  - Dependencies changed since 0.002000, see misc/*.deps* for details
  - build: -1
  - configure: +1 -1 (recommends: +1)
- - develop: +47 -1 (recommends: -1, suggests: +1 ↑1)
+ - develop: +48 -1 (recommends: -1, suggests: +1 ↑1)
  - test: +3 ↑1 -1 (recommends: +3)
 
 0.002000 2012-05-30T02:57:21Z
