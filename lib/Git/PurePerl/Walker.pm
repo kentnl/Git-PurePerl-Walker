@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker;
-BEGIN {
-  $Git::PurePerl::Walker::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Git::PurePerl::Walker::VERSION = '0.002000';
-}
-
+$Git::PurePerl::Walker::VERSION = '0.002001';
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
 use Moose;
@@ -19,11 +13,85 @@ use namespace::autoclean;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has repo => (
 	isa        => GPPW_Repository,
 	is         => 'ro',
 	lazy_build => 1,
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has _method => (
@@ -34,12 +102,71 @@ has _method => (
 );
 
 
+
+
+
+
+
+
+
+
 has 'method' => (
 	init_arg   => undef,
 	is         => 'ro',
 	isa        => GPPW_Method,
 	lazy_build => 1,
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has '_on_commit' => (
@@ -50,12 +177,27 @@ has '_on_commit' => (
 );
 
 
+
+
+
+
+
+
+
+
 has 'on_commit' => (
 	init_arg   => undef,
 	isa        => GPPW_OnCommit,
 	is         => 'ro',
 	lazy_build => 1,
 );
+
+
+
+
+
+
+
 
 
 sub BUILD {
@@ -65,11 +207,17 @@ sub BUILD {
 }
 
 
+
+
+
 sub _build_repo {
 	my ( $self ) = shift;
 	require Git::PurePerl;
 	return Git::PurePerl->new( directory => dir( q[.] )->absolute->stringify );
 }
+
+
+
 
 
 sub _build_method {
@@ -83,6 +231,9 @@ sub _build_method {
 	}
 	return $method->for_repository( $self->repo );
 }
+
+
+
 
 
 sub _build_on_commit {
@@ -104,6 +255,13 @@ sub _build_on_commit {
 }
 
 
+
+
+
+
+
+
+
 ## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub reset {
 	my $self = shift;
@@ -111,6 +269,32 @@ sub reset {
 	$self->on_commit->reset;
 	return $self;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub step {
@@ -128,6 +312,16 @@ sub step {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 sub step_all {
 	my $self  = shift;
 	my $steps = 1;
@@ -140,9 +334,10 @@ sub step_all {
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -150,7 +345,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 =head1 VERSION
 
-version 0.002000
+version 0.002001
 
 =head1 SYNOPSIS
 
@@ -351,10 +546,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

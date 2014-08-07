@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::Method::FirstParent::FromHEAD;
-BEGIN {
-  $Git::PurePerl::Walker::Method::FirstParent::FromHEAD::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Git::PurePerl::Walker::Method::FirstParent::FromHEAD::VERSION = '0.002000';
-}
-
+$Git::PurePerl::Walker::Method::FirstParent::FromHEAD::VERSION = '0.002001';
 # FILENAME: FromHEAD.pm
 # CREATED: 30/05/12 13:57:49 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Start at the HEAD of the current repo.
@@ -16,7 +10,36 @@ BEGIN {
 use Moose;
 
 
+
+
+
+
+
 extends 'Git::PurePerl::Walker::Method::FirstParent';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -29,7 +52,13 @@ has '+start' => (
 );
 
 
+
+
+
 has '+_repo' => ( predicate => '_has_repo', );
+
+
+
 
 
 sub _build_start {
@@ -47,14 +76,45 @@ sub _build_start {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -62,7 +122,7 @@ Git::PurePerl::Walker::Method::FirstParent::FromHEAD - Start at the HEAD of the 
 
 =head1 VERSION
 
-version 0.002000
+version 0.002001
 
 =head1 INHERITED METHODS
 
@@ -130,10 +190,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
