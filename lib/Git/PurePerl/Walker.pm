@@ -245,7 +245,7 @@ sub _build_on_commit {
   my ($self)      = shift;
   my ($on_commit) = $self->_on_commit;
 
-  if ( ref $on_commit and ref $on_commit eq 'CODE' ) {
+  if ( ref $on_commit and 'CODE' eq ref $on_commit ) {
     my $on_commit_name = 'Git::PurePerl::Walker::OnCommit::CallBack';
     my $callback       = $on_commit;
     Class::Load::load_class($on_commit_name);
