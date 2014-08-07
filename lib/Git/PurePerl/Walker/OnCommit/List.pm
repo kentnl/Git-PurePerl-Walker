@@ -5,9 +5,9 @@ package Git::PurePerl::Walker::OnCommit::List;
 
 our $VERSION = '0.003000';
 
-# FILENAME: CallBack.pm
-# CREATED: 28/05/12 18:19:19 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Execute an ordered list of OnCommit events.
+
+# AUTHORITY
 
 use Moose;
 use MooseX::Types::Moose qw( ArrayRef );

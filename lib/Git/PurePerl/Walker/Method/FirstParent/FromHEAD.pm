@@ -5,9 +5,9 @@ package Git::PurePerl::Walker::Method::FirstParent::FromHEAD;
 
 our $VERSION = '0.003000';
 
-# FILENAME: FromHEAD.pm
-# CREATED: 30/05/12 13:57:49 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Start at the HEAD of the current repo.
+
+# AUTHORITY
 
 use Moose;
 

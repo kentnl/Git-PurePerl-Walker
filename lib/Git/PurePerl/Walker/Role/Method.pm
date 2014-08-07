@@ -5,9 +5,9 @@ package Git::PurePerl::Walker::Role::Method;
 
 our $VERSION = '0.003000';
 
-# FILENAME: Method.pm
-# CREATED: 28/05/12 16:33:59 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: A method for traversing a git repository
+
+# AUTHORITY
 
 use Moose::Role;
 

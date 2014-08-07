@@ -5,9 +5,9 @@ package Git::PurePerl::Walker::Role::OnCommit;
 
 our $VERSION = '0.003000';
 
-# FILENAME: OnCommit.pm
-# CREATED: 28/05/12 16:35:27 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: An event to execute when a commit is encountered
+
+# AUTHORITY
 
 use Moose::Role;
 
