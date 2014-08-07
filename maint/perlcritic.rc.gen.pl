@@ -20,6 +20,7 @@ $bundle->configure;
 
 my @stopwords = (
   qw(
+    repo OnCommit args namespace
     )
 );
 for my $wordlist (@stopwords) {
