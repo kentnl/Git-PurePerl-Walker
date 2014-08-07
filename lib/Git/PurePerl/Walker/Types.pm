@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::Types;
-$Git::PurePerl::Walker::Types::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: Types.pm
 # CREATED: 28/05/12 19:47:20 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Misc utility types for Git::PurePerl::Walker
@@ -38,7 +40,7 @@ Git::PurePerl::Walker::Types - Misc utility types for Git::PurePerl::Walker
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 AUTHOR
 

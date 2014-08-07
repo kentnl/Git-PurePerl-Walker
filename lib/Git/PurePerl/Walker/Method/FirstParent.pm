@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::Method::FirstParent;
-$Git::PurePerl::Walker::Method::FirstParent::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: FirstParent.pm
 # CREATED: 28/05/12 16:37:28 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Walk down a tree following the first parent.
@@ -145,7 +147,7 @@ Git::PurePerl::Walker::Method::FirstParent - Walk down a tree following the firs
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 CONSTRUCTOR ARGUMENTS
 

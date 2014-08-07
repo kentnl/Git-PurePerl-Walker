@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker;
-$Git::PurePerl::Walker::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
 use Moose;
@@ -345,7 +347,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 SYNOPSIS
 

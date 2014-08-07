@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::Method::FirstParent::FromHEAD;
-$Git::PurePerl::Walker::Method::FirstParent::FromHEAD::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: FromHEAD.pm
 # CREATED: 30/05/12 13:57:49 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Start at the HEAD of the current repo.
@@ -122,7 +124,7 @@ Git::PurePerl::Walker::Method::FirstParent::FromHEAD - Start at the HEAD of the 
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 INHERITED METHODS
 

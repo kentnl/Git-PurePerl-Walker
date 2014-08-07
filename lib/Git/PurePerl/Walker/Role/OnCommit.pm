@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::Role::OnCommit;
-$Git::PurePerl::Walker::Role::OnCommit::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: OnCommit.pm
 # CREATED: 28/05/12 16:35:27 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: An event to execute when a commit is encountered
@@ -75,7 +77,7 @@ Git::PurePerl::Walker::Role::OnCommit - An event to execute when a commit is enc
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 REQUIRES METHODS
 

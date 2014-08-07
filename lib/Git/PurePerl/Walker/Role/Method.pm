@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::Role::Method;
-$Git::PurePerl::Walker::Role::Method::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: Method.pm
 # CREATED: 28/05/12 16:33:59 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: A method for traversing a git repository
@@ -103,7 +105,7 @@ Git::PurePerl::Walker::Role::Method - A method for traversing a git repository
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 REQUIRES METHODS
 

@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::OnCommit::List;
-$Git::PurePerl::Walker::OnCommit::List::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: CallBack.pm
 # CREATED: 28/05/12 18:19:19 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Execute an ordered list of OnCommit events.
@@ -121,7 +123,7 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 CONSTRUCTOR ARGUMENTS
 

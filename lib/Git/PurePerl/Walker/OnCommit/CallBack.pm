@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Git::PurePerl::Walker::OnCommit::CallBack;
-$Git::PurePerl::Walker::OnCommit::CallBack::VERSION = '0.002001';
+
+our $VERSION = '0.003000';
+
 # FILENAME: CallBack.pm
 # CREATED: 28/05/12 18:19:19 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Execute a sub() for each commit
@@ -95,7 +97,7 @@ Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 CONSTRUCTOR ARGUMENTS
 
