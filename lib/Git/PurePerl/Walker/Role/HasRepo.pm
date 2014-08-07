@@ -32,7 +32,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Moose::Role;
+use Moose::Role qw( with has );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
 
 
