@@ -1,0 +1,12 @@
+This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
+
+0.002001
+
+0.002000 2012-05-30T02:57:21Z
+ [Added / runtime requires]
+ - Carp
+
+0.001002 2012-05-29T07:28:29Z
+
+0.001001 2012-05-29T05:23:43Z
+

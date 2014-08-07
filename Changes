@@ -3,6 +3,9 @@ Release history for Git-PurePerl-Walker
 {{$NEXT}}
 
 0.002000 2012-05-30T02:57:21Z
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001002, see misc/*.deps* for details
+ - runtime: +1
 
  [Git::Changes]
  - 48225024 Tidy (Kent Fredric)
@@ -10,18 +13,14 @@ Release history for Git-PurePerl-Walker
  - d059f592 Update Changelog (Kent Fredric)
  - a53fe247 Add a ChangeLog format emitter (Kent Fredric)
  - 3387631d Document FromHEAD Method (Kent Fredric)
- - 77e5a1a9 add a FromHEAD method walker that doesn't need consttructor
-   args (Kent Fredric)
+ - 77e5a1a9 add a FromHEAD method walker that doesn't need consttructor args (Kent Fredric)
 
 0.001002 2012-05-29T07:28:29Z
- - Greatly improve core documentation of ::Walker, covering user consumable
-   parts.
+ - Greatly improve core documentation of ::Walker, covering user consumable parts.
 
 0.001001 2012-05-29T05:23:43Z
- - Added an example utility in example/ which demonstrates using the tool
-   for a simplistic drop-in replacement for "git log", except with far more
-   fine-tuned power awesomeness, and custom colour formatting and string
-   filtery magic. 
+ - Added an example utility in example/ which demonstrates using the tool for a simplistic drop-in replacement for "git
+   log", except with far more fine-tuned power awesomeness, and custom colour formatting and string filtery magic.
 
 0.001000 2012-05-29T04:26:00Z
  - First version.
