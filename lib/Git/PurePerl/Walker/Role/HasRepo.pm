@@ -85,9 +85,9 @@ And now all C<@foos> can be mangled independently.
 =cut
 
 sub for_repository {
-	my ( $self, $repo ) = @_;
-	my $clone = $self->clone( _repo => $repo, );
-	return $clone;
+  my ( $self, $repo ) = @_;
+  my $clone = $self->clone( _repo => $repo, );
+  return $clone;
 }
 
 no Moose::Role;

@@ -12,13 +12,14 @@ our $VERSION = '0.003000';
 # AUTHORITY
 
 use MooseX::Types -declare => [
-	qw(
-	  GPPW_Repository
-	  GPPW_Methodish
-	  GPPW_Method
-	  GPPW_OnCommitish
-	  GPPW_OnCommit
-	  ) ];
+  qw(
+    GPPW_Repository
+    GPPW_Methodish
+    GPPW_Method
+    GPPW_OnCommitish
+    GPPW_OnCommit
+    )
+];
 
 use MooseX::Types::Moose qw( Str CodeRef );
 

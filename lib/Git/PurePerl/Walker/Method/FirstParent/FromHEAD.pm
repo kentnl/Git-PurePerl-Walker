@@ -50,9 +50,9 @@ L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<_commit( $commit_obje
 =cut
 
 has '+start' => (
-	init_arg   => undef,
-	lazy_build => 1,
-	required   => 0,
+  init_arg   => undef,
+  lazy_build => 1,
+  required   => 0,
 );
 
 =p_attrmethod _has_repo
@@ -66,12 +66,12 @@ has '+_repo' => ( predicate => '_has_repo', );
 =cut
 
 sub _build_start {
-	my $self = shift;
-	if ( not $self->_has_repo ) {
-		require Carp;
-		Carp::confess( 'No repo defined while trying to find a starting commit' );
-	}
-	return $self->_repo->head_sha1;
+  my $self = shift;
+  if ( not $self->_has_repo ) {
+    require Carp;
+    Carp::confess('No repo defined while trying to find a starting commit');
+  }
+  return $self->_repo->head_sha1;
 }
 
 =imethod _build_commit

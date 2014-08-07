@@ -52,11 +52,11 @@ L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<_repo( $repo )>>|Git::PureP
 =cut
 
 has callback => (
-	handles  => { do_callback => 'execute', },
-	is       => 'rw',
-	isa      => CodeRef,
-	required => 1,
-	traits   => [ qw( Code ) ],
+  handles  => { do_callback => 'execute', },
+  is       => 'rw',
+  isa      => CodeRef,
+  required => 1,
+  traits   => [qw( Code )],
 );
 
 =rolemethod handle
@@ -66,9 +66,9 @@ L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<handle( $commit )>>|Git::P
 =cut
 
 sub handle {
-	my ( $self, $commit ) = @_;
-	$self->do_callback( $commit );
-	return $self;
+  my ( $self, $commit ) = @_;
+  $self->do_callback($commit);
+  return $self;
 }
 
 =rolemethod reset
@@ -79,7 +79,7 @@ L<< C<Git::PurePerl::B<Walker::Role::OnCommit>-E<gt>I<reset()>>|Git::PurePerl::W
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	return shift;
+  return shift;
 }
 ## use critic
 

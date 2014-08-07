@@ -61,8 +61,8 @@ has 'start'   => ( isa => 'Str',             is => 'rw', required   => 1 );
 =cut
 
 sub _build__commit {
-	my ( $self ) = @_;
-	return $self->_repo->get_object( $self->start );
+  my ($self) = @_;
+  return $self->_repo->get_object( $self->start );
 }
 
 =rolemethod current
@@ -72,8 +72,8 @@ L<< C<Git::PurePerl::B<Walker::Role::Method>-E<gt>I<current()>>|Git::PurePerl::W
 =cut
 
 sub current {
-	my ( $self ) = @_;
-	return $self->_commit;
+  my ($self) = @_;
+  return $self->_commit;
 }
 
 =rolemethod has_next
@@ -83,14 +83,14 @@ L<< C<Git::PurePerl::B<Walker::Role::Method>-E<gt>I<has_next()>>|Git::PurePerl::
 =cut
 
 sub has_next {
-	my ( $self ) = @_;
-	if ( not $self->_commit ) {
-		return;
-	}
-	if ( not $self->_commit->parent ) {
-		return;
-	}
-	return 1;
+  my ($self) = @_;
+  if ( not $self->_commit ) {
+    return;
+  }
+  if ( not $self->_commit->parent ) {
+    return;
+  }
+  return 1;
 }
 
 =rolemethod next
@@ -101,10 +101,10 @@ L<< C<Git::PurePerl::B<Walker::Role::Method>-E<gt>I<next()>>|Git::PurePerl::Walk
 
 ## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub next {
-	my ( $self ) = @_;
-	my $commit;
-	$self->_commit( $commit = $self->peek_next );
-	return $commit;
+  my ($self) = @_;
+  my $commit;
+  $self->_commit( $commit = $self->peek_next );
+  return $commit;
 }
 ## use critic
 
@@ -115,8 +115,8 @@ L<< C<Git::PurePerl::B<Walker::Role::Method>-E<gt>I<peek_next()>>|Git::PurePerl:
 =cut
 
 sub peek_next {
-	my $commit = ( shift )->_commit->parent;
-	return $commit;
+  my $commit = (shift)->_commit->parent;
+  return $commit;
 }
 
 =rolemethod reset
@@ -127,9 +127,9 @@ L<< C<Git::PurePerl::B<Walker::Role::Method>-E<gt>I<reset()>>|Git::PurePerl::Wal
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	my ( $self ) = @_;
-	$self->_commit( $self->_repo->get_object( $self->start ) );
-	return $self;
+  my ($self) = @_;
+  $self->_commit( $self->_repo->get_object( $self->start ) );
+  return $self;
 }
 ## use critic
 
