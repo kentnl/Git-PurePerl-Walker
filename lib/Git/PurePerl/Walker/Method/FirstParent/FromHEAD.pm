@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::Method::FirstParent::FromHEAD;
 
@@ -48,9 +50,9 @@ extends 'Git::PurePerl::Walker::Method::FirstParent';
 
 
 has '+start' => (
-	init_arg   => undef,
-	lazy_build => 1,
-	required   => 0,
+  init_arg   => undef,
+  lazy_build => 1,
+  required   => 0,
 );
 
 
@@ -64,12 +66,12 @@ has '+_repo' => ( predicate => '_has_repo', );
 
 
 sub _build_start {
-	my $self = shift;
-	if ( not $self->_has_repo ) {
-		require Carp;
-		Carp::confess( 'No repo defined while trying to find a starting commit' );
-	}
-	return $self->_repo->head_sha1;
+  my $self = shift;
+  if ( not $self->_has_repo ) {
+    require Carp;
+    Carp::confess('No repo defined while trying to find a starting commit');
+  }
+  return $self->_repo->head_sha1;
 }
 
 

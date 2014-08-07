@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::OnCommit::List;
 
@@ -51,14 +53,14 @@ with qw( Git::PurePerl::Walker::Role::OnCommit );
 
 
 has 'events' => (
-	isa => ArrayRef [ GPPW_OnCommit ],
-	is => 'rw',
-	handles => {
-		all_events => 'elements',
-		add_event  => 'push',
-	},
-	traits  => [ qw( Array ) ],
-	default => sub { [] },
+  isa => ArrayRef [GPPW_OnCommit],
+  is => 'rw',
+  handles => {
+    all_events => 'elements',
+    add_event  => 'push',
+  },
+  traits  => [qw( Array )],
+  default => sub { [] },
 );
 
 
@@ -68,11 +70,11 @@ has 'events' => (
 
 
 sub handle {
-	my ( $self, $commit ) = @_;
-	for my $child ( $self->all_events ) {
-		$child->handle( $commit );
-	}
-	return $self;
+  my ( $self, $commit ) = @_;
+  for my $child ( $self->all_events ) {
+    $child->handle($commit);
+  }
+  return $self;
 }
 
 
@@ -83,28 +85,28 @@ sub handle {
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	my ( $self, ) = @_;
-	for my $child ( $self->events ) {
-		$child->reset();
-	}
-	return $self;
+  my ( $self, ) = @_;
+  for my $child ( $self->events ) {
+    $child->reset();
+  }
+  return $self;
 }
 ## use critic
 
 around add_event => sub {
-	my ( $orig, $self, @args ) = @_;
-	if ( not $self->_repo ) {
-		return $orig->( $self, @args );
-	}
-	my ( @new ) = map { $_->for_repository( $self->_repo ) } @args;
-	return $orig->( $self, @new );
+  my ( $orig, $self, @args ) = @_;
+  if ( not $self->_repo ) {
+    return $orig->( $self, @args );
+  }
+  my (@new) = map { $_->for_repository( $self->_repo ) } @args;
+  return $orig->( $self, @new );
 
 };
 around for_repository => sub {
-	my ( $orig, $self, @args ) = @_;
-	my $new = $self->$orig( @args );
-	$new->events( [ map { $_->for_repository( $args[ 0 ] ) } $self->all_events ] );
-	return $new;
+  my ( $orig, $self, @args ) = @_;
+  my $new = $self->$orig(@args);
+  $new->events( [ map { $_->for_repository( $args[0] ) } $self->all_events ] );
+  return $new;
 };
 
 no Moose;

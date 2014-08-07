@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::Types;
 
@@ -10,13 +12,14 @@ our $VERSION = '0.003000';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use MooseX::Types -declare => [
-	qw(
-	  GPPW_Repository
-	  GPPW_Methodish
-	  GPPW_Method
-	  GPPW_OnCommitish
-	  GPPW_OnCommit
-	  ) ];
+  qw(
+    GPPW_Repository
+    GPPW_Methodish
+    GPPW_Method
+    GPPW_OnCommitish
+    GPPW_OnCommit
+    )
+];
 
 use MooseX::Types::Moose qw( Str CodeRef );
 

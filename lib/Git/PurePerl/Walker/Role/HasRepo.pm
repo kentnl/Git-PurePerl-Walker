@@ -1,5 +1,7 @@
+use 5.008;    #utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::Role::HasRepo;
 
@@ -83,9 +85,9 @@ has '_repo' => ( isa => GPPW_Repository, is => 'rw', weak_ref => 1 );
 
 
 sub for_repository {
-	my ( $self, $repo ) = @_;
-	my $clone = $self->clone( _repo => $repo, );
-	return $clone;
+  my ( $self, $repo ) = @_;
+  my $clone = $self->clone( _repo => $repo, );
+  return $clone;
 }
 
 no Moose::Role;

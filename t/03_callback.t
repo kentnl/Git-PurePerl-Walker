@@ -5,7 +5,7 @@ use Test::More;
 use FindBin;
 use Path::Class qw( dir );
 
-use lib dir( $FindBin::Bin )->subdir( "tlib" )->absolute->stringify;
+use lib dir($FindBin::Bin)->subdir("tlib")->absolute->stringify;
 use t::util { '$repo' => 1 };
 
 # FILENAME: 03_callback.t
@@ -17,15 +17,16 @@ my $v;
 my $i = 0;
 
 my $caller_factory = Git::PurePerl::Walker::OnCommit::CallBack->new(
-	callback => sub {
-		$i++;
-		$v = \@_;
-	} );
+  callback => sub {
+    $i++;
+    $v = \@_;
+  }
+);
 
-my $caller = $caller_factory->for_repository( $repo );
+my $caller = $caller_factory->for_repository($repo);
 
 $caller->handle( $repo->master );
 
-is( $v->[ 0 ]->sha1, '010fb4bcf7d92c031213f43d0130c811cbb355e7', 'Callback triggered' );
+is( $v->[0]->sha1, '010fb4bcf7d92c031213f43d0130c811cbb355e7', 'Callback triggered' );
 
 done_testing;

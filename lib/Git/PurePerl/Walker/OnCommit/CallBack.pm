@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::OnCommit::CallBack;
 
@@ -50,11 +52,11 @@ with qw( Git::PurePerl::Walker::Role::OnCommit );
 
 
 has callback => (
-	handles  => { do_callback => 'execute', },
-	is       => 'rw',
-	isa      => CodeRef,
-	required => 1,
-	traits   => [ qw( Code ) ],
+  handles  => { do_callback => 'execute', },
+  is       => 'rw',
+  isa      => CodeRef,
+  required => 1,
+  traits   => [qw( Code )],
 );
 
 
@@ -64,9 +66,9 @@ has callback => (
 
 
 sub handle {
-	my ( $self, $commit ) = @_;
-	$self->do_callback( $commit );
-	return $self;
+  my ( $self, $commit ) = @_;
+  $self->do_callback($commit);
+  return $self;
 }
 
 
@@ -77,7 +79,7 @@ sub handle {
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	return shift;
+  return shift;
 }
 ## use critic
 

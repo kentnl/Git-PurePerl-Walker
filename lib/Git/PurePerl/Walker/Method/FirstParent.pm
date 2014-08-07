@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::Method::FirstParent;
 
@@ -59,8 +61,8 @@ has 'start'   => ( isa => 'Str',             is => 'rw', required   => 1 );
 
 
 sub _build__commit {
-	my ( $self ) = @_;
-	return $self->_repo->get_object( $self->start );
+  my ($self) = @_;
+  return $self->_repo->get_object( $self->start );
 }
 
 
@@ -70,8 +72,8 @@ sub _build__commit {
 
 
 sub current {
-	my ( $self ) = @_;
-	return $self->_commit;
+  my ($self) = @_;
+  return $self->_commit;
 }
 
 
@@ -81,14 +83,14 @@ sub current {
 
 
 sub has_next {
-	my ( $self ) = @_;
-	if ( not $self->_commit ) {
-		return;
-	}
-	if ( not $self->_commit->parent ) {
-		return;
-	}
-	return 1;
+  my ($self) = @_;
+  if ( not $self->_commit ) {
+    return;
+  }
+  if ( not $self->_commit->parent ) {
+    return;
+  }
+  return 1;
 }
 
 
@@ -99,10 +101,10 @@ sub has_next {
 
 ## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub next {
-	my ( $self ) = @_;
-	my $commit;
-	$self->_commit( $commit = $self->peek_next );
-	return $commit;
+  my ($self) = @_;
+  my $commit;
+  $self->_commit( $commit = $self->peek_next );
+  return $commit;
 }
 ## use critic
 
@@ -113,8 +115,8 @@ sub next {
 
 
 sub peek_next {
-	my $commit = ( shift )->_commit->parent;
-	return $commit;
+  my $commit = (shift)->_commit->parent;
+  return $commit;
 }
 
 
@@ -125,9 +127,9 @@ sub peek_next {
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	my ( $self ) = @_;
-	$self->_commit( $self->_repo->get_object( $self->start ) );
-	return $self;
+  my ($self) = @_;
+  $self->_commit( $self->_repo->get_object( $self->start ) );
+  return $self;
 }
 ## use critic
 

@@ -90,8 +90,9 @@
             "MooseX::Types::Moose" : "0",
             "Path::Class" : "0",
             "namespace::autoclean" : "0",
-            "perl" : "5.006",
+            "perl" : "5.008",
             "strict" : "0",
+            "utf8" : "0",
             "warnings" : "0"
          }
       },
@@ -242,6 +243,7 @@
          "lib" : "0.63",
          "namespace::autoclean" : "0.19",
          "strict" : "1.08",
+         "utf8" : "1.14",
          "warnings" : "1.24"
       },
       "perl" : {
