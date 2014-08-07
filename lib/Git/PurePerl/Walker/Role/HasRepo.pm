@@ -32,7 +32,7 @@ method which sets the repo property.
 
 =cut
 
-use Moose::Role;
+use Moose::Role qw( with has );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
 
 =consumerole MooseX::Clone

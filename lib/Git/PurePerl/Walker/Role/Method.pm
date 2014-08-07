@@ -11,7 +11,7 @@ our $VERSION = '0.003000';
 
 # AUTHORITY
 
-use Moose::Role;
+use Moose::Role qw( with requires );
 
 =consumerole Git::PurePerl::Walker::Role::HasRepo
 

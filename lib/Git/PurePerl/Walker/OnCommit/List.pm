@@ -11,7 +11,7 @@ our $VERSION = '0.003000';
 
 # AUTHORITY
 
-use Moose;
+use Moose qw( with has around );
 use MooseX::Types::Moose qw( ArrayRef );
 use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
 use namespace::autoclean;

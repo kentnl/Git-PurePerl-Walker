@@ -11,7 +11,7 @@ our $VERSION = '0.003000';
 
 # AUTHORITY
 
-use Moose;
+use Moose qw( extends has );
 
 =extends  Git::PurePerl::Walker::Method::FirstParent
 

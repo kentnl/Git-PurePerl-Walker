@@ -11,7 +11,7 @@ our $VERSION = '0.003000';
 
 # AUTHORITY
 
-use Moose;
+use Moose qw( with has );
 use MooseX::Types::Moose qw( CodeRef );
 use namespace::autoclean;
 

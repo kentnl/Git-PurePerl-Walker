@@ -23,10 +23,12 @@ use MooseX::Types -declare => [
 
 use MooseX::Types::Moose qw( Str CodeRef );
 
+## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
 class_type GPPW_Repository, { 'class' => 'Git::PurePerl' };
 role_type GPPW_Method,      { role    => 'Git::PurePerl::Walker::Role::Method' };
 role_type GPPW_OnCommit,    { role    => 'Git::PurePerl::Walker::Role::OnCommit' };
 union GPPW_Methodish, [ Str, GPPW_Method ];
 union GPPW_OnCommitish, [ Str, CodeRef, GPPW_OnCommit ];
+## use critic
 
 1;
