@@ -207,7 +207,7 @@ has 'on_commit' => (
 
 
 sub BUILD {
-  my ( $self, $args ) = @_;
+  my ( $self, ) = @_;
   $self->reset;
   return $self;
 }
@@ -217,7 +217,6 @@ sub BUILD {
 
 
 sub _build_repo {
-  my ($self) = shift;
   require Git::PurePerl;
   return Git::PurePerl->new( directory => dir(q[.])->absolute->stringify );
 }
