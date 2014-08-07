@@ -49,6 +49,12 @@ extends 'Git::PurePerl::Walker::Method::FirstParent';
 
 
 
+
+
+
+
+
+
 has '+start' => (
   init_arg   => undef,
   lazy_build => 1,
@@ -132,11 +138,17 @@ version 0.003000
 
 =head2 for_repository
 
-L<< C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>|Git::PurePerl::Walker::Role::HasRepo/for_repository >>
+L<<
+C<Git::PurePerl::B<Walker::Role::HasRepo>-E<gt>I<for_repository( $repo )>>
+|Git::PurePerl::Walker::Role::HasRepo/for_repository
+>>
 
 =head2 clone
 
-L<< C<MooseX::B<Clone>-E<gt>I<clone( %params )>>|MooseX::Clone/clone-params >>
+L<<
+C<MooseX::B<Clone>-E<gt>I<clone( %params )>>
+|MooseX::Clone/clone-params
+>>
 
 =head2 _repo
 

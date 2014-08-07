@@ -18,7 +18,7 @@ use MooseX::Types -declare => [
     GPPW_Method
     GPPW_OnCommitish
     GPPW_OnCommit
-    )
+    ),
 ];
 
 use MooseX::Types::Moose qw( Str CodeRef );
