@@ -57,7 +57,7 @@ has '_repo' => ( isa => GPPW_Repository, is => 'rw', weak_ref => 1 );
 
 =method for_repository
 
-Construct an entity for a given repository. 
+Construct an entity for a given repository.
 
 This internally calls L<< C<MooseX::B<Clone>>|MooseX::Clone >> on the current object, passing the _repo
 field to its constructor, producing a seperate, disconnected object to work

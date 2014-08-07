@@ -53,7 +53,7 @@ requires 'handle';
 
 =rolerequires reset
 
-This method is signaled when the associated repository is resetting its iteration. 
+This method is signaled when the associated repository is resetting its iteration.
 
 You can either no-op this, or make it do something useful.
 
