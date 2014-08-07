@@ -3,6 +3,8 @@ use warnings;
 
 package Git::PurePerl::Walker::OnCommit::CallBack;
 
+our $VERSION = '0.003000';
+
 # FILENAME: CallBack.pm
 # CREATED: 28/05/12 18:19:19 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Execute a sub() for each commit

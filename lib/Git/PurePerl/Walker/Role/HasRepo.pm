@@ -3,6 +3,8 @@ use warnings;
 
 package Git::PurePerl::Walker::Role::HasRepo;
 
+our $VERSION = '0.003000';
+
 # FILENAME: HasRepo.pm
 # CREATED: 28/05/12 18:20:41 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: An entity that has a repo

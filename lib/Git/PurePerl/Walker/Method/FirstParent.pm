@@ -3,6 +3,8 @@ use warnings;
 
 package Git::PurePerl::Walker::Method::FirstParent;
 
+our $VERSION = '0.003000';
+
 # FILENAME: FirstParent.pm
 # CREATED: 28/05/12 16:37:28 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Walk down a tree following the first parent.

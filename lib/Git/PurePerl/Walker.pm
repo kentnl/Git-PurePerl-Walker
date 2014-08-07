@@ -3,6 +3,8 @@ use warnings;
 
 package Git::PurePerl::Walker;
 
+our $VERSION = '0.003000';
+
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
 use Moose;
