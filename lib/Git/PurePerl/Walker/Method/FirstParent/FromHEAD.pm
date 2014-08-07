@@ -55,6 +55,9 @@ extends 'Git::PurePerl::Walker::Method::FirstParent';
 
 
 
+
+
+
 has '+start' => (
   init_arg   => undef,
   lazy_build => 1,
@@ -79,6 +82,24 @@ sub _build_start {
   }
   return $self->_repo->head_sha1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -160,31 +181,52 @@ L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<start( $commit )>>|Gi
 
 =head2 _commit
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<_commit( $commit_object )>>|Git::PurePerl::Walker::Method::FirstParent/_commit >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<_commit( $commit_object )>>
+|Git::PurePerl::Walker::Method::FirstParent/_commit
+>>
 
 =head2 _build_commit
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<_build_commit()>>|Git::PurePerl::Walker::Method::FirstParent/_build_commit >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<_build_commit()>>
+|Git::PurePerl::Walker::Method::FirstParent/_build_commit
+>>
 
 =head2 current
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<current()>>|Git::PurePerl::Walker::Method::FirstParent/current >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<current()>>
+|Git::PurePerl::Walker::Method::FirstParent/current
+>>
 
 =head2 has_next
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<has_next()>>|Git::PurePerl::Walker::Method::FirstParent/has_next >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<has_next()>>
+|Git::PurePerl::Walker::Method::FirstParent/has_next
+>>
 
 =head2 next
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<next()>>|Git::PurePerl::Walker::Method::FirstParent/next >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<next()>>
+|Git::PurePerl::Walker::Method::FirstParent/next
+>>
 
 =head2 peek_next
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<peek_next()>>|Git::PurePerl::Walker::Method::FirstParent/peek_next >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<peek_next()>>
+|Git::PurePerl::Walker::Method::FirstParent/peek_next
+>>
 
 =head2 reset
 
-L<< C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<reset()>>|Git::PurePerl::Walker::Method::FirstParent/reset >>
+L<<
+C<Git::PurePerl::B<Walker::Method::FirstParent>-E<gt>I<reset()>>
+|Git::PurePerl::Walker::Method::FirstParent/reset
+>>
 
 =head1 PRIVATE METHODS
 
