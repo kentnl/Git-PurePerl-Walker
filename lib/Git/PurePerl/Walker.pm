@@ -466,7 +466,7 @@ Reset the walk routine back to the state it was before you walked.
 =head2 step
 
 Increments one step forward in the git history, and dispatches the object to the
-OnCommit handlers.
+C<OnCommit> handlers.
 
 If there are more possible steps to take, it will return a true value.
 

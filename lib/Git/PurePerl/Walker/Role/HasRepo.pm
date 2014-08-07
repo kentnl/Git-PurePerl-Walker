@@ -132,7 +132,7 @@ method which sets the repo property.
 Construct an entity for a given repository.
 
 This internally calls L<< C<MooseX::B<Clone>>|MooseX::Clone >> on the current object, passing the _repo
-field to its constructor, producing a seperate, disconnected object to work
+field to its constructor, producing a separate, disconnected object to work
 with.
 
 The rationale behind this is simple: Its very likely users will want one set of
@@ -141,7 +141,7 @@ multiple repositories.
 
 And as each repository will need to maintain its own state for traversal, they
 have to normally manually construct an object for each repository, manually
-disconnecting the constructor arugments.
+disconnecting the constructor arguments.
 
 This instead is simple:
 
