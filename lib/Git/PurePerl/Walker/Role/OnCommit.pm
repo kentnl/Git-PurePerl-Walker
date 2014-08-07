@@ -11,7 +11,7 @@ our $VERSION = '0.003000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose::Role;
+use Moose::Role qw( with requires );
 
 
 
