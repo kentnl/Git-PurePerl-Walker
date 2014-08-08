@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::Role::OnCommit;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: An event to execute when a commit is encountered
 

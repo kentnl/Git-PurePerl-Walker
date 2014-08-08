@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 

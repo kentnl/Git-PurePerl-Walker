@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::OnCommit::List;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: Execute an ordered list of OnCommit events.
 

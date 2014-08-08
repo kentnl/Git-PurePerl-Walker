@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::Role::HasRepo;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: An entity that has a repo
 
