@@ -3,7 +3,7 @@ NAME
     Git::PurePerl repo
 
 VERSION
-    version 0.002000
+    version 0.003000
 
 SYNOPSIS
             use Git::PurePerl::Walker;
@@ -102,7 +102,7 @@ METHODS
 
   step
     Increments one step forward in the git history, and dispatches the
-    object to the OnCommit handlers.
+    object to the "OnCommit" handlers.
 
     If there are more possible steps to take, it will return a true value.
 
@@ -167,7 +167,7 @@ AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+    This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

@@ -1,22 +1,25 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::OnCommit::List;
-BEGIN {
-  $Git::PurePerl::Walker::OnCommit::List::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Git::PurePerl::Walker::OnCommit::List::VERSION = '0.002000';
-}
 
-# FILENAME: CallBack.pm
-# CREATED: 28/05/12 18:19:19 by Kent Fredric (kentnl) <kentfredric@gmail.com>
+our $VERSION = '0.003000';
+
 # ABSTRACT: Execute an ordered list of OnCommit events.
 
-use Moose;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with has around );
 use MooseX::Types::Moose qw( ArrayRef );
 use Git::PurePerl::Walker::Types qw( GPPW_OnCommit );
 use namespace::autoclean;
+
+
+
+
+
 
 
 with qw( Git::PurePerl::Walker::Role::OnCommit );
@@ -25,51 +28,85 @@ with qw( Git::PurePerl::Walker::Role::OnCommit );
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has 'events' => (
-	isa => ArrayRef [ GPPW_OnCommit ],
-	is => 'rw',
-	handles => {
-		all_events => 'elements',
-		add_event  => 'push',
-	},
-	traits  => [ qw( Array ) ],
-	default => sub { [] },
+  isa => ArrayRef [GPPW_OnCommit],
+  is => 'rw',
+  handles => {
+    all_events => 'elements',
+    add_event  => 'push',
+  },
+  traits  => [qw( Array )],
+  default => sub { [] },
 );
 
 
+
+
+
+
+
 sub handle {
-	my ( $self, $commit ) = @_;
-	for my $child ( $self->all_events ) {
-		$child->handle( $commit );
-	}
-	return $self;
+  my ( $self, $commit ) = @_;
+  for my $child ( $self->all_events ) {
+    $child->handle($commit);
+  }
+  return $self;
 }
+
+
+
+
+
 
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	my ( $self, ) = @_;
-	for my $child ( $self->events ) {
-		$child->reset();
-	}
-	return $self;
+  my ( $self, ) = @_;
+  for my $child ( $self->events ) {
+    $child->reset();
+  }
+  return $self;
 }
 ## use critic
 
 around add_event => sub {
-	my ( $orig, $self, @args ) = @_;
-	if ( not $self->_repo ) {
-		return $orig->( $self, @args );
-	}
-	my ( @new ) = map { $_->for_repository( $self->_repo ) } @args;
-	return $orig->( $self, @new );
+  my ( $orig, $self, @args ) = @_;
+  if ( not $self->_repo ) {
+    return $orig->( $self, @args );
+  }
+  my (@new) = map { $_->for_repository( $self->_repo ) } @args;
+  return $orig->( $self, @new );
 
 };
 around for_repository => sub {
-	my ( $orig, $self, @args ) = @_;
-	my $new = $self->$orig( @args );
-	$new->events( [ map { $_->for_repository( $args[ 0 ] ) } $self->all_events ] );
-	return $new;
+  my ( $orig, $self, @args ) = @_;
+  my $new = $self->$orig(@args);
+  $new->events( [ map { $_->for_repository( $args[0] ) } $self->all_events ] );
+  return $new;
 };
 
 no Moose;
@@ -77,9 +114,10 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -87,7 +125,7 @@ Git::PurePerl::Walker::OnCommit::List - Execute an ordered list of OnCommit even
 
 =head1 VERSION
 
-version 0.002000
+version 0.003000
 
 =head1 CONSTRUCTOR ARGUMENTS
 
@@ -139,10 +177,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

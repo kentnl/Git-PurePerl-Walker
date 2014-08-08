@@ -1,21 +1,49 @@
+use 5.008;    #utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::Role::HasRepo;
-BEGIN {
-  $Git::PurePerl::Walker::Role::HasRepo::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Git::PurePerl::Walker::Role::HasRepo::VERSION = '0.002000';
-}
 
-# FILENAME: HasRepo.pm
-# CREATED: 28/05/12 18:20:41 by Kent Fredric (kentnl) <kentfredric@gmail.com>
+our $VERSION = '0.003000';
+
 # ABSTRACT: An entity that has a repo
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose::Role;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Moose::Role qw( with has );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -23,22 +51,53 @@ with qw( MooseX::Clone );
 
 
 
+
+
+
+
+
+
 has '_repo' => ( isa => GPPW_Repository, is => 'rw', weak_ref => 1 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub for_repository {
-	my ( $self, $repo ) = @_;
-	my $clone = $self->clone( _repo => $repo, );
-	return $clone;
+  my ( $self, $repo ) = @_;
+  my $clone = $self->clone( _repo => $repo, );
+  return $clone;
 }
 
 no Moose::Role;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -46,7 +105,7 @@ Git::PurePerl::Walker::Role::HasRepo - An entity that has a repo
 
 =head1 VERSION
 
-version 0.002000
+version 0.003000
 
 =head1 DESCRIPTION
 
@@ -70,10 +129,10 @@ method which sets the repo property.
 
 =head2 for_repository
 
-Construct an entity for a given repository. 
+Construct an entity for a given repository.
 
 This internally calls L<< C<MooseX::B<Clone>>|MooseX::Clone >> on the current object, passing the _repo
-field to its constructor, producing a seperate, disconnected object to work
+field to its constructor, producing a separate, disconnected object to work
 with.
 
 The rationale behind this is simple: Its very likely users will want one set of
@@ -82,7 +141,7 @@ multiple repositories.
 
 And as each repository will need to maintain its own state for traversal, they
 have to normally manually construct an object for each repository, manually
-disconnecting the constructor arugments.
+disconnecting the constructor arguments.
 
 This instead is simple:
 
@@ -117,10 +176,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

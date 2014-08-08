@@ -1,4 +1,4 @@
-#!/usr/bin/env perl 
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -9,28 +9,28 @@ use warnings;
 
 use Path::Class qw( dir );
 
-my $cwd = dir( q{.} );
+my $cwd = dir(q{.});
 
 sub is_git_dir {
-	my ( $dir ) = @_;
-	return unless -e $dir->subdir( 'objects' );
-	return unless -e $dir->subdir( 'refs' );
-	return unless -e $dir->file( 'HEAD' );
-	return 1;
+  my ($dir) = @_;
+  return unless -e $dir->subdir('objects');
+  return unless -e $dir->subdir('refs');
+  return unless -e $dir->file('HEAD');
+  return 1;
 }
 
 sub find_git_dir {
-	my $start = shift;
-	if ( is_git_dir( $start ) ) {
-		return $start;
-	}
-	if ( -e $start->subdir( '.git' ) && is_git_dir( $start->subdir( q{.git} ) ) ) {
-		return $start->subdir( '.git' );
-	}
-	if ( $start->parent->stringify ne $start->stringify ) {
-		return find_git_dir( $start->parent );
-	}
-	die "No Git Directory found";
+  my $start = shift;
+  if ( is_git_dir($start) ) {
+    return $start;
+  }
+  if ( -e $start->subdir('.git') && is_git_dir( $start->subdir(q{.git}) ) ) {
+    return $start->subdir('.git');
+  }
+  if ( $start->parent->stringify ne $start->stringify ) {
+    return find_git_dir( $start->parent );
+  }
+  die "No Git Directory found";
 }
 
 require Git::PurePerl;
@@ -38,45 +38,45 @@ require Git::PurePerl::Walker;
 require Git::PurePerl::Walker::Method::FirstParent;
 
 sub trim {
-	my $comment = shift;
-	$comment =~ s/\s+/ /g;
+  my $comment = shift;
+  $comment =~ s/\s+/ /g;
 
-	#if ( length( $comment ) > 80 ) {
-	#	return substr( $comment, 0, 80 ) . '...';
-	#}
-	return $comment;
+  #if ( length( $comment ) > 80 ) {
+  #	return substr( $comment, 0, 80 ) . '...';
+  #}
+  return $comment;
 }
 
 sub abbr_sha {
-	my $sha = shift;
-	return substr $sha, 0, 8;
+  my $sha = shift;
+  return substr $sha, 0, 8;
 }
 
-my $repo = Git::PurePerl->new( gitdir => find_git_dir( $cwd ), );
+my $repo = Git::PurePerl->new( gitdir => find_git_dir($cwd), );
 use CPAN::Changes;
 use CPAN::Changes::Release;
 my $release = CPAN::Changes::Release->new(
-	version => '1.0',
-	date    => '2012-05-30',
+  version => '1.0',
+  date    => '2012-05-30',
 
 );
 
 my $walker = Git::PurePerl::Walker->new(
-	repo      => $repo,
-	method    => 'FirstParent::FromHEAD',
-	on_commit => sub {
-		my $commit = shift;
-		$release->add_changes(
-			{ group => 'Git::Changes' },
-			sprintf "%s %s (%s)",
-			abbr_sha( $commit->sha1 ),
-			trim( $commit->comment ),
-			$commit->author->name
-		);
-	},
+  repo      => $repo,
+  method    => 'FirstParent::FromHEAD',
+  on_commit => sub {
+    my $commit = shift;
+    $release->add_changes(
+      { group => 'Git::Changes' },
+      sprintf "%s %s (%s)",
+      abbr_sha( $commit->sha1 ),
+      trim( $commit->comment ),
+      $commit->author->name
+    );
+  },
 );
 
 $walker->step_all;
 my $changes = CPAN::Changes->new( preamble => "Revision History for \$Project", );
-$changes->add_release( $release );
+$changes->add_release($release);
 print $changes->serialize();

@@ -1,21 +1,24 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::OnCommit::CallBack;
-BEGIN {
-  $Git::PurePerl::Walker::OnCommit::CallBack::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Git::PurePerl::Walker::OnCommit::CallBack::VERSION = '0.002000';
-}
 
-# FILENAME: CallBack.pm
-# CREATED: 28/05/12 18:19:19 by Kent Fredric (kentnl) <kentfredric@gmail.com>
+our $VERSION = '0.003000';
+
 # ABSTRACT: Execute a sub() for each commit
 
-use Moose;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with has );
 use MooseX::Types::Moose qw( CodeRef );
 use namespace::autoclean;
+
+
+
+
+
 
 
 with qw( Git::PurePerl::Walker::Role::OnCommit );
@@ -24,25 +27,59 @@ with qw( Git::PurePerl::Walker::Role::OnCommit );
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has callback => (
-	handles  => { do_callback => 'execute', },
-	is       => 'rw',
-	isa      => CodeRef,
-	required => 1,
-	traits   => [ qw( Code ) ],
+  handles  => { do_callback => 'execute', },
+  is       => 'rw',
+  isa      => CodeRef,
+  required => 1,
+  traits   => [qw( Code )],
 );
 
 
+
+
+
+
+
 sub handle {
-	my ( $self, $commit ) = @_;
-	$self->do_callback( $commit );
-	return $self;
+  my ( $self, $commit ) = @_;
+  $self->do_callback($commit);
+  return $self;
 }
+
+
+
+
+
 
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	return shift;
+  return shift;
 }
 ## use critic
 
@@ -51,9 +88,10 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -61,7 +99,7 @@ Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
 
 =head1 VERSION
 
-version 0.002000
+version 0.003000
 
 =head1 CONSTRUCTOR ARGUMENTS
 
@@ -113,10 +151,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

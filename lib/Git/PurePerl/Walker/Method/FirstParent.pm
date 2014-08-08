@@ -1,22 +1,53 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Git::PurePerl::Walker::Method::FirstParent;
-BEGIN {
-  $Git::PurePerl::Walker::Method::FirstParent::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Git::PurePerl::Walker::Method::FirstParent::VERSION = '0.002000';
-}
 
-# FILENAME: FirstParent.pm
-# CREATED: 28/05/12 16:37:28 by Kent Fredric (kentnl) <kentfredric@gmail.com>
+our $VERSION = '0.003000';
+
 # ABSTRACT: Walk down a tree following the first parent.
 
-use Moose;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with has );
+
+
+
+
+
 
 
 with qw( Git::PurePerl::Walker::Role::Method );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,51 +57,79 @@ has '_commit' => ( isa => 'Maybe[ Object ]', is => 'rw', lazy_build => 1 );
 has 'start'   => ( isa => 'Str',             is => 'rw', required   => 1 );
 
 
+
+
+
 sub _build__commit {
-	my ( $self ) = @_;
-	return $self->_repo->get_object( $self->start );
+  my ($self) = @_;
+  return $self->_repo->get_object( $self->start );
 }
+
+
+
+
+
 
 
 sub current {
-	my ( $self ) = @_;
-	return $self->_commit;
+  my ($self) = @_;
+  return $self->_commit;
 }
+
+
+
+
+
 
 
 sub has_next {
-	my ( $self ) = @_;
-	if ( not $self->_commit ) {
-		return;
-	}
-	if ( not $self->_commit->parent ) {
-		return;
-	}
-	return 1;
+  my ($self) = @_;
+  if ( not $self->_commit ) {
+    return;
+  }
+  if ( not $self->_commit->parent ) {
+    return;
+  }
+  return 1;
 }
+
+
+
+
+
 
 
 ## no critic (Subroutines::ProhibitBuiltinHomonyms)
 sub next {
-	my ( $self ) = @_;
-	my $commit;
-	$self->_commit( $commit = $self->peek_next );
-	return $commit;
+  my ($self) = @_;
+  my $commit;
+  $self->_commit( $commit = $self->peek_next );
+  return $commit;
 }
 ## use critic
 
 
+
+
+
+
+
 sub peek_next {
-	my $commit = ( shift )->_commit->parent;
-	return $commit;
+  my $commit = (shift)->_commit->parent;
+  return $commit;
 }
+
+
+
+
+
 
 
 ## no critic ( Subroutines::ProhibitBuiltinHomonyms )
 sub reset {
-	my ( $self ) = @_;
-	$self->_commit( $self->_repo->get_object( $self->start ) );
-	return $self;
+  my ($self) = @_;
+  $self->_commit( $self->_repo->get_object( $self->start ) );
+  return $self;
 }
 ## use critic
 
@@ -79,9 +138,10 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -89,7 +149,7 @@ Git::PurePerl::Walker::Method::FirstParent - Walk down a tree following the firs
 
 =head1 VERSION
 
-version 0.002000
+version 0.003000
 
 =head1 CONSTRUCTOR ARGUMENTS
 
@@ -167,10 +227,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
