@@ -1,6 +1,10 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-0.002001
+0.003001
+ [Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.016007 → 2.016008
+
+0.003000 2014-08-07T20:42:17Z
  [Added / configure recommends]
  - ExtUtils::MakeMaker 6.98
 

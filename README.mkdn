@@ -4,7 +4,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 # VERSION
 
-version 0.003000
+version 0.003001
 
 # SYNOPSIS
 
