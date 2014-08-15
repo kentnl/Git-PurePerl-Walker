@@ -11,27 +11,6 @@ our $VERSION = '0.003001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 use Moose::Role qw( with has );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
 
