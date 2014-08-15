@@ -17,29 +17,6 @@ use Class::Load qw( );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository GPPW_Methodish GPPW_Method GPPW_OnCommitish GPPW_OnCommit);
 use namespace::autoclean;
 
-=head1 SYNOPSIS
-
-
-	use Git::PurePerl::Walker;
-	use Git::PurePerl::Walker::Method::FirstParent;
-
-	my $repo = Git::PurePerl->new( ... );
-
-	my $walker = Git::PurePerl::Walker->new(
-		repo => $repo,
-		method => Git::PurePerl::Walker::Method::FirstParent->new(
-			start => $repo->ref_sha1('refs/heads/master'),
-		),
-		on_commit => sub {
-			my ( $commit ) = @_;
-			print $commit->sha1;
-		},
-	);
-
-	$walker->step_all;
-
-=cut
-
 =carg repo
 
 B<Mandatory:> An instance of L<< C<Git::PurePerl>|Git::PurePerl >> representing
@@ -340,3 +317,26 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
+
+=head1 SYNOPSIS
+
+
+	use Git::PurePerl::Walker;
+	use Git::PurePerl::Walker::Method::FirstParent;
+
+	my $repo = Git::PurePerl->new( ... );
+
+	my $walker = Git::PurePerl::Walker->new(
+		repo => $repo,
+		method => Git::PurePerl::Walker::Method::FirstParent->new(
+			start => $repo->ref_sha1('refs/heads/master'),
+		),
+		on_commit => sub {
+			my ( $commit ) = @_;
+			print $commit->sha1;
+		},
+	);
+
+	$walker->step_all;
+
+=cut

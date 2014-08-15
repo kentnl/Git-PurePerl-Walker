@@ -11,27 +11,6 @@ our $VERSION = '0.003001';
 
 # AUTHORITY
 
-=head1 DESCRIPTION
-
-This is a composition role consumed by other roles to provide them with a
-private repo property.
-
-This role also folds in L<< C<MooseX::B<Clone>>|MooseX::Clone >> and provides the 'for_repository'
-method which sets the repo property.
-
-	package Foo {
-		use Moose;
-		with 'Git::PurePerl::Walker::Role::HasRepo';
-		__PACKAGE__->meta->make_immutable;
-	}
-
-	my $factory = Foo->new( %args );
-
-	my $instance = $factory->for_repository( $Git_PurePerl_Repo );
-
-
-=cut
-
 use Moose::Role qw( with has );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
 
@@ -92,3 +71,23 @@ sub for_repository {
 
 no Moose::Role;
 1;
+
+=head1 DESCRIPTION
+
+This is a composition role consumed by other roles to provide them with a
+private repo property.
+
+This role also folds in L<< C<MooseX::B<Clone>>|MooseX::Clone >> and provides the 'for_repository'
+method which sets the repo property.
+
+	package Foo {
+		use Moose;
+		with 'Git::PurePerl::Walker::Role::HasRepo';
+		__PACKAGE__->meta->make_immutable;
+	}
+
+	my $factory = Foo->new( %args );
+
+	my $instance = $factory->for_repository( $Git_PurePerl_Repo );
+
+=cut
