@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::OnCommit::CallBack;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.003002';
 
 # ABSTRACT: Execute a sub() for each commit
 
