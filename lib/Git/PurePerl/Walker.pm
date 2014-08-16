@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
@@ -16,29 +16,6 @@ use Path::Class qw( dir );
 use Class::Load qw( );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository GPPW_Methodish GPPW_Method GPPW_OnCommitish GPPW_OnCommit);
 use namespace::autoclean;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -353,7 +330,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 =head1 VERSION
 
-version 0.003000
+version 0.003001
 
 =head1 SYNOPSIS
 

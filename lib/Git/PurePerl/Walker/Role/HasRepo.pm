@@ -5,32 +5,11 @@ use utf8;
 
 package Git::PurePerl::Walker::Role::HasRepo;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: An entity that has a repo
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 use Moose::Role qw( with has );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository );
@@ -105,7 +84,7 @@ Git::PurePerl::Walker::Role::HasRepo - An entity that has a repo
 
 =head1 VERSION
 
-version 0.003000
+version 0.003001
 
 =head1 DESCRIPTION
 

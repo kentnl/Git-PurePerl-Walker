@@ -1,5 +1,18 @@
 Release history for Git-PurePerl-Walker
 
+0.003001 2014-08-15T23:07:22Z
+ [00 Trivial]
+ - CPANDAY!
+ - no code changes.
+ - whitespace reduced.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003000, see misc/*.deps* for details
+ - develop: +1 (suggests: ↑1)
+
+ [Misc]
+ - Improve source side POD to reduce build side whitespace.
+
 0.003000 2014-08-07T20:42:17Z
  [00 Major]
  - Changes that may affect hand-operated downstreams.
