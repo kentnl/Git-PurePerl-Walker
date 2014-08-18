@@ -3,11 +3,12 @@ Release history for Git-PurePerl-Walker
 {{$NEXT}}
  [00 Minor]
  - Replace Path::Class with Path::Tiny in code and tests.
+ - Replace Class::Load with Module::Runtime
 
  [Dependencies::Stats]
  - Dependencies changed since 0.003001, see misc/*.deps* for details
  - develop: +1 ↑1 (suggests: ↑2)
- - runtime: +1 -1
+ - runtime: +2 -2
 
 0.003001 2014-08-15T23:07:22Z
  [00 Trivial]
