@@ -112,7 +112,6 @@
             "File::pushd" : "0",
             "FindBin" : "0",
             "Package::Stash" : "0",
-            "Path::Class" : "0",
             "Scalar::Util" : "0",
             "Test::More" : "0.89",
             "lib" : "0"
@@ -234,7 +233,6 @@
          "MooseX::Types" : "0.44",
          "MooseX::Types::Moose" : "0.44",
          "Package::Stash" : "0.36",
-         "Path::Class" : "0.33",
          "Path::Tiny" : "0.056",
          "Pod::Coverage::TrustPod" : "0.100003",
          "Scalar::Util" : "1.39",

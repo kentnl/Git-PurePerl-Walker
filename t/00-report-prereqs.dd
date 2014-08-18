@@ -97,7 +97,6 @@ do { my $x = {
                                    'File::pushd' => '0',
                                    'FindBin' => '0',
                                    'Package::Stash' => '0',
-                                   'Path::Class' => '0',
                                    'Scalar::Util' => '0',
                                    'Test::More' => '0.89',
                                    'lib' => '0'
