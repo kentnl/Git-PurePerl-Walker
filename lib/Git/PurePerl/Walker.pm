@@ -5,14 +5,14 @@ use utf8;
 
 package Git::PurePerl::Walker;
 
-our $VERSION = '0.003002';
+our $VERSION = '0.004000';
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
 # AUTHORITY
 
 use Moose qw( has );
-use Path::Class qw( dir );
+use Path::Tiny qw();
 use Class::Load qw( );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository GPPW_Methodish GPPW_Method GPPW_OnCommitish GPPW_OnCommit);
 use namespace::autoclean;
@@ -195,7 +195,7 @@ sub BUILD {
 
 sub _build_repo {
   require Git::PurePerl;
-  return Git::PurePerl->new( directory => dir(q[.])->absolute->stringify );
+  return Git::PurePerl->new( directory => Path::Tiny->cwd->stringify );
 }
 
 =p_method _build_method

@@ -1,6 +1,14 @@
 Release history for Git-PurePerl-Walker
 
 {{$NEXT}}
+ [00 Minor]
+ - Remove use of Path::Class from code.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003001, see misc/*.deps* for details
+ - develop: +1 ↑1 (suggests: ↑2)
+ - runtime: +1 -1
+ - test: +1
 
 0.003001 2014-08-15T23:07:22Z
  [00 Trivial]
