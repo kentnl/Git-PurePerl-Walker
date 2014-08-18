@@ -5,6 +5,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
 
  [Added / runtime requires]
+ - Module::Runtime
  - Path::Tiny
 
  [Changed / develop requires]
@@ -15,6 +16,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.017002 → 2.019000
 
  [Removed / runtime requires]
+ - Class::Load
  - Path::Class
 
 0.003001 2014-08-15T23:07:22Z
