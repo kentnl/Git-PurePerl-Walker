@@ -4,9 +4,6 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Added / runtime requires]
  - Path::Tiny
 
- [Added / test requires]
- - Path::Class
-
  [Removed / runtime requires]
  - Path::Class
 

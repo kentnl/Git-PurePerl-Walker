@@ -3,7 +3,7 @@ NAME
     Git::PurePerl repo
 
 VERSION
-    version 0.003002
+    version 0.004000
 
 SYNOPSIS
             use Git::PurePerl::Walker;
