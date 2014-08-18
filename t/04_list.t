@@ -3,10 +3,10 @@ use warnings;
 
 use Test::More;
 use FindBin;
-use Path::Class qw( dir );
+use Path::Tiny qw(path);
 use Scalar::Util qw( refaddr );
 
-use lib dir($FindBin::Bin)->subdir("tlib")->absolute->stringify;
+use lib path($FindBin::Bin)->child("tlib")->absolute->stringify;
 use t::util { '$repo' => 1 };
 
 # FILENAME: 04_list.t

@@ -1,6 +1,15 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.003001
+0.004000
+ [Added / runtime requires]
+ - Module::Runtime
+ - Path::Tiny
+
+ [Removed / runtime requires]
+ - Class::Load
+ - Path::Class
+
+0.003001 2014-08-15T23:07:22Z
 
 0.003000 2014-08-07T20:42:17Z
  [Added / configure requires]

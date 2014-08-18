@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::Method::FirstParent;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.004000';
 
 # ABSTRACT: Walk down a tree following the first parent.
 
@@ -149,7 +149,7 @@ Git::PurePerl::Walker::Method::FirstParent - Walk down a tree following the firs
 
 =head1 VERSION
 
-version 0.003001
+version 0.004000
 
 =head1 CONSTRUCTOR ARGUMENTS
 

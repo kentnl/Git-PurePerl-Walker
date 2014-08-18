@@ -5,15 +5,15 @@ use utf8;
 
 package Git::PurePerl::Walker;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.004000';
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has );
-use Path::Class qw( dir );
-use Class::Load qw( );
+use Path::Tiny qw();
+use Module::Runtime qw( );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository GPPW_Methodish GPPW_Method GPPW_OnCommitish GPPW_OnCommit);
 use namespace::autoclean;
 
@@ -195,7 +195,7 @@ sub BUILD {
 
 sub _build_repo {
   require Git::PurePerl;
-  return Git::PurePerl->new( directory => dir(q[.])->absolute->stringify );
+  return Git::PurePerl->new( directory => Path::Tiny->cwd->stringify );
 }
 
 
@@ -207,8 +207,8 @@ sub _build_method {
   my ($method) = $self->_method;
 
   if ( not ref $method ) {
-    my $method_name = 'Git::PurePerl::Walker::Method::' . $method;
-    Class::Load::load_class($method_name);
+    my $method_name = Module::Runtime::compose_module_name( 'Git::PurePerl::Walker::Method', $method );
+    Module::Runtime::require_module($method_name);
     $method = $method_name->new();
   }
   return $method->for_repository( $self->repo );
@@ -225,12 +225,12 @@ sub _build_on_commit {
   if ( ref $on_commit and 'CODE' eq ref $on_commit ) {
     my $on_commit_name = 'Git::PurePerl::Walker::OnCommit::CallBack';
     my $callback       = $on_commit;
-    Class::Load::load_class($on_commit_name);
+    Module::Runtime::require_module($on_commit_name);
     $on_commit = $on_commit_name->new( callback => $callback, );
   }
   elsif ( not ref $on_commit ) {
     my $on_commit_name = 'Git::PurePerl::Walker::OnCommit::' . $on_commit;
-    Class::Load::load_class($on_commit_name);
+    Module::Runtime::require_module($on_commit_name);
     $on_commit = $on_commit_name->new();
   }
   return $on_commit->for_repository( $self->repo );
@@ -330,7 +330,7 @@ Git::PurePerl::Walker - Walk over a sequence of commits in a Git::PurePerl repo
 
 =head1 VERSION
 
-version 0.003001
+version 0.004000
 
 =head1 SYNOPSIS
 

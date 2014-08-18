@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::Method::FirstParent::FromHEAD;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.004000';
 
 # ABSTRACT: Start at the HEAD of the current repo.
 
@@ -153,7 +153,7 @@ Git::PurePerl::Walker::Method::FirstParent::FromHEAD - Start at the HEAD of the 
 
 =head1 VERSION
 
-version 0.003001
+version 0.004000
 
 =head1 INHERITED METHODS
 

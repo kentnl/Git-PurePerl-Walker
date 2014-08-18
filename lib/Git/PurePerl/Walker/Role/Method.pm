@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::Role::Method;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.004000';
 
 # ABSTRACT: A method for traversing a git repository
 
@@ -107,7 +107,7 @@ Git::PurePerl::Walker::Role::Method - A method for traversing a git repository
 
 =head1 VERSION
 
-version 0.003001
+version 0.004000
 
 =head1 REQUIRES METHODS
 

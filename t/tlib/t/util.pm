@@ -8,7 +8,7 @@ package t::util;
 
 use Package::Stash;
 use FindBin;
-use Path::Class qw( dir );
+use Path::Tiny qw(path);
 use Git::PurePerl;
 use Archive::Tar;
 use File::Temp qw( tempdir );
@@ -41,8 +41,8 @@ sub get_repo {
 }
 
 sub repos_src {
-  my $root = dir($FindBin::Bin);
-  return { '01' => $root->file('git_repo_01.tar.gz')->absolute, };
+  my $root = path($FindBin::Bin);
+  return { '01' => $root->child('git_repo_01.tar.gz')->absolute, };
 }
 
 1;
