@@ -7,9 +7,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / runtime requires]
  - Path::Tiny
 
- [Added / test requires]
- - Path::Class
-
  [Changed / develop requires]
  - Test::Kwalitee 1.12 → 1.21
 
