@@ -12,7 +12,7 @@ our $VERSION = '0.003002';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has );
-use Path::Class qw( dir );
+use Path::Tiny qw();
 use Class::Load qw( );
 use Git::PurePerl::Walker::Types qw( GPPW_Repository GPPW_Methodish GPPW_Method GPPW_OnCommitish GPPW_OnCommit);
 use namespace::autoclean;
@@ -195,7 +195,7 @@ sub BUILD {
 
 sub _build_repo {
   require Git::PurePerl;
-  return Git::PurePerl->new( directory => dir(q[.])->absolute->stringify );
+  return Git::PurePerl->new( directory => Path::Tiny->cwd->stringify );
 }
 
 
