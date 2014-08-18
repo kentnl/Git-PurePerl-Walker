@@ -5,7 +5,7 @@ use utf8;
 
 package Git::PurePerl::Walker::Types;
 
-our $VERSION = '0.003002';
+our $VERSION = '0.004001';
 
 # ABSTRACT: Misc utility types for Git::PurePerl::Walker
 
