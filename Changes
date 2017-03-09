@@ -1,6 +1,6 @@
 Release history for Git-PurePerl-Walker
 
-0.004001 2017-03-09T15:56:58Z be92508
+0.004001 2017-03-09T15:58:56Z b97378c
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
 
  [Dependencies::Stats]
