@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 5;
 use FindBin;
 use Path::Tiny qw(path);
 use Scalar::Util qw( refaddr );
@@ -53,5 +53,3 @@ my $c = Git::PurePerl::Walker::OnCommit::CallBack->new(
 );
 $li->add_event($c);
 isnt( refaddr $li->events->[2], refaddr $c, "callback is cloned x3" );
-
-done_testing;

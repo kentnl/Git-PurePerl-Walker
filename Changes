@@ -2,6 +2,7 @@ Release history for Git-PurePerl-Walker
 
 {{$NEXT}}
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
+ - Tests made more portable to older Test::More
 
  [Dependencies::Stats]
  - Dependencies changed since 0.004000, see misc/*.deps* for details
