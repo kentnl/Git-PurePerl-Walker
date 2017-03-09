@@ -1,11 +1,10 @@
-use 5.008;    #utf8
+use 5.006;    #our
 use strict;
 use warnings;
-use utf8;
 
 package Git::PurePerl::Walker::Role::Method;
 
-our $VERSION = '0.004000';
+our $VERSION = '0.004001';
 
 # ABSTRACT: A method for traversing a git repository
 
@@ -107,7 +106,7 @@ Git::PurePerl::Walker::Role::Method - A method for traversing a git repository
 
 =head1 VERSION
 
-version 0.004000
+version 0.004001
 
 =head1 REQUIRES METHODS
 
@@ -170,7 +169,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2017 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

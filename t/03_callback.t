@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 1;
 use FindBin;
 use Path::Tiny qw(path);
 
@@ -28,5 +28,3 @@ my $caller = $caller_factory->for_repository($repo);
 $caller->handle( $repo->master );
 
 is( $v->[0]->sha1, '010fb4bcf7d92c031213f43d0130c811cbb355e7', 'Callback triggered' );
-
-done_testing;

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 9;
 use FindBin;
 use Path::Tiny qw( path );
 
@@ -29,5 +29,3 @@ is( $method->_commit->sha1, $expected->{'HEAD~1'}, 'At Head~1' );
 is( $method->current->sha1, $expected->{'HEAD~1'}, 'At Head~1' );
 is( $method->start,         $expected->{'HEAD'},   'At Head' );
 ok( !$method->has_next, "Has no more items" );
-
-done_testing;

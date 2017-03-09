@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 2;
 use FindBin;
 use Path::Tiny qw(path);
 
@@ -39,4 +39,3 @@ is_deeply(
   ],
   'Traverse whole tree'
 );
-done_testing;
