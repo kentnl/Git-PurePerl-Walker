@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::OnCommit::List;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: Execute an ordered list of OnCommit events.
 

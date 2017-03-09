@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::Role::HasRepo;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: An entity that has a repo
 

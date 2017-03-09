@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: Walk over a sequence of commits in a Git::PurePerl repo
 

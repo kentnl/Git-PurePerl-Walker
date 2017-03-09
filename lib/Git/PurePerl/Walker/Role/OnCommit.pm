@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::Role::OnCommit;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: An event to execute when a commit is encountered
 

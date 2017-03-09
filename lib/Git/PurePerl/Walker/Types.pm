@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::Types;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: Misc utility types for Git::PurePerl::Walker
 

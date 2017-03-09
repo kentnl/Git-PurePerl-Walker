@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::Role::Method;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: A method for traversing a git repository
 
