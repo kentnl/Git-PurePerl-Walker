@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::OnCommit::CallBack;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: Execute a sub() for each commit
 
@@ -98,7 +98,7 @@ Git::PurePerl::Walker::OnCommit::CallBack - Execute a sub() for each commit
 
 =head1 VERSION
 
-version 0.004001
+version 0.004002
 
 =head1 CONSTRUCTOR ARGUMENTS
 

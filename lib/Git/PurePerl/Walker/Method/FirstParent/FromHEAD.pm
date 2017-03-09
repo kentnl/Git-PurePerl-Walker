@@ -4,7 +4,7 @@ use warnings;
 
 package Git::PurePerl::Walker::Method::FirstParent::FromHEAD;
 
-our $VERSION = '0.004001';
+our $VERSION = '0.004002';
 
 # ABSTRACT: Start at the HEAD of the current repo.
 
@@ -152,7 +152,7 @@ Git::PurePerl::Walker::Method::FirstParent::FromHEAD - Start at the HEAD of the 
 
 =head1 VERSION
 
-version 0.004001
+version 0.004002
 
 =head1 INHERITED METHODS
 
